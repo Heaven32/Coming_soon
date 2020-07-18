@@ -1,5 +1,5 @@
 .wrap {
-    width:10%;
+    width: 100px;
     height:auto;
 }
 
@@ -24,7 +24,7 @@
 .wrap ul li a{
     position:relative;
     display:block;
-    width:100%;
+    width:100px;
     height:auto;
     box-sizing:border-box;
     font-size:13px;
