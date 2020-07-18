@@ -36,7 +36,7 @@
     color: black;
 }
 
-.wrap ul li a:hover{
+.list li a:hover{
     text-decoration: underline;
 }
 .wrap ul li ul{
