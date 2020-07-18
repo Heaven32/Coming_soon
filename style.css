@@ -32,11 +32,12 @@
     line-height:1.2em;
     padding:10px 15px;
     border:1px solid grey;
-
+    text-decoration: none;
+    color: black;
 }
 
-.wrap ul li a:hover, .wrap ul li:hover a{
-
+.wrap ul li a:hover{
+    text-decoration: underline;
 }
 .wrap ul li ul{
     position:absolute;
