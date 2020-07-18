@@ -19,8 +19,6 @@
     width:100%; 
     height:auto; 
     position:relative;
-    border-radius: 50%;
-    margin: 3px;
 }
 
 .wrap ul li a{
@@ -30,19 +28,15 @@
     height:auto;
     box-sizing:border-box;
     font-size:13px;
-    text-transform:uppercase;
     font-weight:bold;
-    color:#FBF7F7;
     line-height:1.2em;
     padding:10px 15px;
-    background: goldenrod;
-    border-top:1px solid #236A92;
-    text-decoration:none;
-    border-radius: 25px;
+    border:1px solid grey;
+
 }
 
 .wrap ul li a:hover, .wrap ul li:hover a{
-    background: firebrick;
+
 }
 .wrap ul li ul{
     position:absolute;
@@ -57,11 +51,9 @@
 }
 .wrap ul li ul li a{
     white-space:nowrap;
-    text-transform:none;
-    padding:5px 20px;
+    
 }
 
 .wrap ul li ul li a:hover{
-    background: darkcyan;
-    color: greenyellow;
+   
 }
