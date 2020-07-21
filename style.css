@@ -5,6 +5,9 @@
     color: red;
     font-size: 22px;
 }
+#up {
+    left: 14px;
+}
 .heart_up {
     position: absolute;
     color: red;
@@ -17,6 +20,10 @@
     right: 6px;
     color: red;
     font-size: 22px;
+}
+#down {
+    bottom: 10px;
+    right: 13px;
 }
 .heart_down {
     position: absolute;
@@ -55,31 +62,78 @@
     z-index: 1;
     left: 78px ;
 }
+.block.first.card {
+    display: -webkit-inline-box;
+}
+.block.first.card:nth-child(2) {
+    left: 20px;
+}
+.block.first.card:nth-child(3) {
+    position: relative;
+    left: -35px;
+}
+.block.first.card:nth-child(4) {
+    position: relative;
+    left: -94px;
+}
+.block.first.card:nth-child(5) {
+    position: relative;
+    left: -156px;
+}
+.box1:hover {
+    z-index: 100;
+    margin-top: 65px;
+    transition: 1s;
+}
 .box2 {
     z-index: 2;
     left: 156px;
     top: 0;
+}
+.box2:hover {
+    margin-top: 65px;
+    transition: 1s;
+    z-index: 100;
 }
 .box3 {
     z-index: 3;
     left: 234px;
     top: 0;
 }
+.box3:hover {
+    margin-top: 65px;
+    transition: 1s;
+    z-index: 100;
+}
 .box4 {
     z-index: 4;
     left: 312px;
     top: 0;
+}
+.box4:hover {
+    margin-top: 65px;
+    transition: 1s;
+    z-index: 100;
 }
 .box5 {
     z-index: 5;
     left: 390px;
     top: 0;
 }
+.box5:hover {
+    margin-top: 65px;
+    transition: 1s;
+    z-index: 100;
+}
 .second {
     top: 100px;
 }
 body {
     background-color: #d5d5d5;
+    height: 650px;
+    text-align: center;
+    padding-top: 40px;
+
 }
 .card {
     height: 200px;
