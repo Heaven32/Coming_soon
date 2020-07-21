@@ -55,50 +55,25 @@
     z-index: 1;
     left: 78px ;
 }
-.box1:hover {
-    z-index: 100;
-    margin-top: 65px;
-    transition: 1s;
-}
 .box2 {
     z-index: 2;
     left: 156px;
     top: 0;
-}
-.box2:hover {
-    margin-top: 65px;
-    transition: 1s;
-    z-index: 100;
 }
 .box3 {
     z-index: 3;
     left: 234px;
     top: 0;
 }
-.box3:hover {
-    margin-top: 65px;
-    transition: 1s;
-    z-index: 100;
-}
 .box4 {
     z-index: 4;
     left: 312px;
     top: 0;
 }
-.box4:hover {
-    margin-top: 65px;
-    transition: 1s;
-    z-index: 100;
-}
 .box5 {
     z-index: 5;
     left: 390px;
     top: 0;
-}
-.box5:hover {
-    margin-top: 65px;
-    transition: 1s;
-    z-index: 100;
 }
 .second {
     top: 100px;
