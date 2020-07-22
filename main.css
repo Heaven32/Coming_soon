@@ -1,0 +1,70 @@
+div, p, a {
+    font-size: 20px;
+}
+.body {
+    margin: 0;
+}
+.wrap {
+    width: 90%;
+    margin: 0 auto;
+}
+.logo {
+    display: inline-block;
+}
+.logo img{
+  width: 100px;
+}
+.text {
+    display: flex;
+}
+.menu .menu-wr {
+    display: inline-block;
+    border: 1px solid gray;
+    display: flex;
+    height: 50px;
+    min-width: 100px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+.menu {
+    float: right;
+    display: inline-block;
+    padding: 33px 0;
+}
+.header {
+    background: linear-gradient(to top right, purple 10%, crimson 30%, orangered 50%, gold 75%);
+}
+.section {
+    display: flex;
+    text-align: justify;
+    margin: 0 auto;
+    width: 80%;
+}
+.wrap-block {
+    display: none;
+    border: none;
+    position: absolute;
+}
+.wrap-block .block{
+    border: 1px solid gray;
+    display: flex;
+    height: 50px;
+    min-width: 100px;
+    justify-content: center;
+    align-items: center;
+}
+.menu-wr:hover + .wrap-block, .wrap-block:hover{
+    display: block;
+}
+.block {
+    background: white;
+}
+.umbrella {
+    color: red;
+    font-size: 25px;
+    display: none;
+}
+.block:hover .umbrella {
+    display: block;
+}
