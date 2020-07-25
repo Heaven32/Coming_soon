@@ -25,7 +25,9 @@
 
 .cloud {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  max-width: 735px;
+  margin: 0 auto;
 }
 
 .description {
@@ -88,19 +90,22 @@
 .section-2 {
   background-image: url(/images/Rectangle\ 1.png);
   width: 100vw;
-  height: 320px;
+  height: 100vh;
   margin-top: 220px;
 }
 
 .ice {
   text-align: center;
-  margin-top: -223px;;
+  margin-top: -200px;
 }
 .ship {
-  position: relative;
-  left: 30%;
-  width: fit-content;
-  bottom: 24px;
+  display: flex;
+  width: 410px;
+  margin: 0 auto;
+  margin-top: -24px;
+}
+.ship img{
+  float: left;
 }
 .line-one {
   height: 4px;
