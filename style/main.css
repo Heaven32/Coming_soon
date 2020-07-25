@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'Houschka Pro Medium';
+  src: local('Houschka Pro Medium'), local('Houschka-Pro-Medium'),
+      url('/fonts/HouschkaPro-Medium.woff2') format('woff2'),
+      url('/fonts/HouschkaPro-Medium.woff') format('woff'),
+      url('/fonts/HouschkaPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Houschka Pro Bold';
+  src: local('Houschka Pro Bold'), local('Houschka-Pro-Bold'),
+      url('/fonts/HouschkaPro-Bold.woff2') format('woff2'),
+      url('/fonts/HouschkaPro-Bold.woff') format('woff'),
+      url('/fonts/HouschkaPro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.main {
+  width: 100vw;
+  background-image: url(/images/Background.png);
+}
+
+.cloud {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.description {
+  margin-top: 45px;
+  text-align: center;
+}
+
+.block-first p{
+  font-size: 72px;
+  font-family: 'Houschka Pro Bold';
+  color: white;
+  text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.17);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.block-second p {
+  font-size: 14px;
+  font-family: 'Houschka Pro Medium';
+  color: rgb(38, 107, 151);
+}
+
+.block-third {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-row input {
+  border: 0 none;
+  border-radius: 4px;
+  background-image: -moz-linear-gradient( 90deg, rgb(240,240,240) 0%, rgb(235,235,235) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb(240,240,240) 0%, rgb(235,235,235) 100%);
+  background-image: -ms-linear-gradient( 90deg, rgb(240,240,240) 0%, rgb(235,235,235) 100%);
+  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.004),inset 0px 2px 5px 0px rgba(29, 26, 22, 0.2);
+  width: 230px;
+  height: 37px;
+  font-size: 12px;
+  font-family: "Arial";
+  color: rgb(128, 128, 128);
+  background: white;
+  padding-left: 10px;
+}
+
+.btn button {
+  border-radius: 4px;
+  border: 1px solid rgb(250, 170, 34);
+  background: linear-gradient(rgb(251,197,65), rgb(248,164,38), rgb(248,164,38));
+  width: 96px;
+  height: 40px;
+  color: rgb(255, 255, 255);
+  border: none;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Houschka Pro Bold';
+  text-shadow: 0px 1px 1px rgba(29, 26, 22, 0.2);
+  margin-left: 10px;
+}
+
+.section-2 {
+  background-image: url(/images/Rectangle\ 1.png);
+  width: 100vw;
+  height: 320px;
+  margin-top: 220px;
+}
+
+.ice {
+  text-align: center;
+  margin-top: -223px;;
+}
+.ship {
+  position: relative;
+  left: 30%;
+  width: fit-content;
+  bottom: 24px;
+}
+.line-one {
+  height: 4px;
+  width: 100vw;
+  background: #ddecfa;
+}
+.line-two {
+  height: 9px;
+  width: 100vw;
+  background: #327DBD;
+}
+.crono {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: -263px;
+  
+}
+.cr-block {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-family: 'Houschka Pro Medium';
+  color: rgb(38, 107, 151);
+  z-index: 31;
+  background: #b9d6ef;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.cr-wrap {
+  z-index: 1000;
+  margin: 20px;
+}
+.cr-text {
+  margin-top: 10px;
+  font-size: 24px;
+  font-family: 'Houschka Pro Bold';
+  color: rgb(243, 243, 243);
+  z-index: 31;
+}
+
+
+
