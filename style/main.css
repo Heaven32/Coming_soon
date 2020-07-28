@@ -1,53 +1,44 @@
-@font-face {
-  font-family: 'Houschka Pro Medium';
-  src: local('Houschka Pro Medium'), local('Houschka-Pro-Medium'),
-      url('./fonts/HouschkaPro-Medium.woff2') format('woff2'),
-      url('./fonts/HouschkaPro-Medium.woff') format('woff'),
-      url('./fonts/HouschkaPro-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Houschka Pro Bold';
-  src: local('Houschka Pro Bold'), local('Houschka-Pro-Bold'),
-      url('./fonts/HouschkaPro-Bold.woff2') format('woff2'),
-      url('./fonts/HouschkaPro-Bold.woff') format('woff'),
-      url('./fonts/HouschkaPro-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 .main {
   width: 100vw;
+  height: 100vh;
   background-image: url(../images/Background.png);
 }
-
+.first-cloud {
+  padding-left: 28px;
+}
 .cloud {
   display: flex;
   justify-content: space-between;
-  max-width: 735px;
+  max-width: 787px;
   margin: 0 auto;
 }
 
 .description {
-  margin-top: 45px;
+  margin-top: 33px;
   text-align: center;
 }
 
 .block-first p{
   font-size: 72px;
-  font-family: 'Houschka Pro Bold';
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
   color: white;
   text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.17);
   margin: 0;
   text-transform: uppercase;
+  padding-left: 10px;
 }
-
+.block-second {
+  margin-top: -9px;
+}
 .block-second p {
-  font-size: 14px;
-  font-family: 'Houschka Pro Medium';
+  font-size: 13.8px;
+  font-family: 'Raleway', sans-serif;;
   color: rgb(38, 107, 151);
+  padding-right: 18px;
 }
 
 .block-third {
@@ -55,7 +46,9 @@
   justify-content: center;
   align-items: center;
 }
-
+.input-row {
+  margin-top: 3px;
+}
 .input-row input {
   border: 0 none;
   border-radius: 4px;
@@ -71,7 +64,10 @@
   background: white;
   padding-left: 10px;
 }
-
+.btn {
+  margin-top: 4px;
+ 
+}
 .btn button {
   border-radius: 4px;
   border: 1px solid rgb(250, 170, 34);
@@ -82,27 +78,29 @@
   border: none;
   text-align: center;
   font-size: 14px;
-  font-family: 'Houschka Pro Bold';
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
   text-shadow: 0px 1px 1px rgba(29, 26, 22, 0.2);
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .section-2 {
   background-image: url(../images/Rectangle\ 1.png);
   width: 100vw;
-  height: 100vh;
-  margin-top: 220px;
+  margin-top: 208px;
+  height: 100%;
 }
 
 .ice {
   text-align: center;
-  margin-top: -200px;
+  margin-top: -195px;
+  padding-right: 11px;
 }
 .ship {
   display: flex;
-  width: 410px;
+  width: 397px;
   margin: 0 auto;
-  margin-top: -24px;
+  margin-top: -25px;
 }
 .ship img{
   float: left;
@@ -131,7 +129,7 @@
   justify-content: center;
   align-items: center;
   font-size: 24px;
-  font-family: 'Houschka Pro Medium';
+  font-family: 'Mulish', sans-serif;
   color: rgb(38, 107, 151);
   z-index: 31;
   background: #b9d6ef;
@@ -140,12 +138,13 @@
 }
 .cr-wrap {
   z-index: 1000;
-  margin: 20px;
+  margin: 20px 20px 20px 20px;
 }
 .cr-text {
   margin-top: 10px;
   font-size: 24px;
-  font-family: 'Houschka Pro Bold';
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
   color: rgb(243, 243, 243);
   z-index: 31;
 }
