@@ -1,5 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@font-face {
+  font-family: 'Houschka Pro';
+  src: url('HouschkaPro-Medium.eot');
+  src: local('Houschka Pro Medium'), local('HouschkaPro-Medium'),
+      url('../fonts/HouschkaPro-Medium.eot') format('embedded-opentype'),
+      url('../fonts/HouschkaPro-Medium.woff2') format('woff2'),
+      url('../fonts/HouschkaPro-Medium.woff') format('woff'),
+      url('../fonts/HouschkaPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Houschka Pro Bold';
+  src: url('HouschkaPro-Bold.eot');
+  src: local('Houschka Pro Bold'), local('HouschkaPro-Bold'),
+      url('../fonts/HouschkaPro-Bold.eot') format('embedded-opentype'),
+      url('../fonts/HouschkaPro-Bold.woff2') format('woff2'),
+      url('../fonts/HouschkaPro-Bold.woff') format('woff'),
+      url('../fonts/HouschkaPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
 
 body {
   overflow: hidden;
@@ -11,7 +31,7 @@ body {
   background-image: url(../images/Background.png);
 }
 .first-cloud {
-  padding-left: 28px;
+  padding-left: 33px;
 }
 .cloud {
   display: flex;
@@ -27,22 +47,22 @@ body {
 
 .block-first p{
   font-size: 72px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Houschka Pro Bold';
   font-weight: bold;
   color: white;
   text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.17);
   margin: 0;
   text-transform: uppercase;
-  padding-left: 20px;
+  padding-left: 24px;
 }
 .block-second {
   margin-top: -9px;
 }
 .block-second p {
   font-size: 13.8px;
-  font-family: 'Raleway', sans-serif;;
+  font-family: 'Houschka Pro';
   color: rgb(38, 107, 151);
-  padding-right: 2px;
+  padding-right: 2.5px;
 }
 
 .block-third {
@@ -66,7 +86,7 @@ body {
   font-family: "Arial";
   color: rgb(128, 128, 128);
   background: white;
-  padding-left: 13px;
+  padding-left: 14.5px;
 }
 .btn {
   margin-top: 4px;
@@ -82,7 +102,7 @@ body {
   border: none;
   text-align: center;
   font-size: 14px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Houschka Pro Bold';
   font-weight: bold;
   text-shadow: 0px 1px 1px rgba(29, 26, 22, 0.2);
   margin-left: 5px;
@@ -97,18 +117,48 @@ body {
 
 .ice {
   text-align: center;
-  margin-top: -195px;
+  margin-top: -200px;
   padding-right: 2px;
 }
 .ship {
-  display: flex;
-  width: 380px;
-  margin: 0 auto;
-  margin-top: -25px;
+  width: 100%;
+  transform-origin: bottom;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  
 }
-.ship img{
-  float: left;
+.ship:before {
+  content: attr(data-content);
+  display: inline-block;
+  position: absolute;
+  left: .2em;
+  width: 9em;
+  height: 2em;
+  padding: .2em;
+  background-image: url(../images/ship.png);
+  background-repeat: no-repeat;
+  animation: timing 20s infinite;
+  animation-timing-function: ease;
 }
+.bounce-1 {
+  animation-name: bounce-1;
+  animation-timing-function: linear;
+}
+@keyframes timing {
+  50%{
+    left: 100%;
+    margin-left: -3.6em;
+  }
+  5%{
+    transform: scale(-1, 1);
+  }
+}
+@keyframes bounce-1 {
+  0%   { transform: translateY(-10px); }
+  50%  { transform: translateY(-30px); }
+  100% { transform: translateY(-10px); }
+}
+
 .line-one {
   height: 4px;
   width: 100vw;
@@ -133,7 +183,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 24px;
-  font-family: 'Mulish', sans-serif;
+  font-family: 'Houschka Pro';
   color: rgb(38, 107, 151);
   z-index: 31;
   background: #b9d6ef;
@@ -147,13 +197,15 @@ body {
 .cr-text {
   margin-top: 6px;
   font-size: 24px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Houschka Pro Bold';
   font-weight: bold;
   color: rgb(243, 243, 243);
   z-index: 31;
 }
 .cntr-b {
-  margin: 20px 13px;
+  margin: 21px 12.5px 19px 13px;
 }
-
+.cntr-a {
+  margin: 20px 20px 18px 20px;
+}
 
