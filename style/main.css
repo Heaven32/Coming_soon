@@ -1,211 +1,345 @@
 @font-face {
-  font-family: 'Houschka Pro';
-  src: url('HouschkaPro-Medium.eot');
-  src: local('Houschka Pro Medium'), local('HouschkaPro-Medium'),
-      url('../fonts/HouschkaPro-Medium.eot') format('embedded-opentype'),
-      url('../fonts/HouschkaPro-Medium.woff2') format('woff2'),
-      url('../fonts/HouschkaPro-Medium.woff') format('woff'),
-      url('../fonts/HouschkaPro-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
+    font-family: 'Montserrat-light';
+    src: local('Montserrat Light'), 
+    local('Montserrat-Light'), 
+    url('../fonts/montserrat/montserratlight.woff2') format('woff2'), 
+    url('../fonts/montserrat/montserratlight.woff') format('woff'), 
+    url('../fonts/montserrat/montserratlight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
 }
 @font-face {
-  font-family: 'Houschka Pro Bold';
-  src: url('HouschkaPro-Bold.eot');
-  src: local('Houschka Pro Bold'), local('HouschkaPro-Bold'),
-      url('../fonts/HouschkaPro-Bold.eot') format('embedded-opentype'),
-      url('../fonts/HouschkaPro-Bold.woff2') format('woff2'),
-      url('../fonts/HouschkaPro-Bold.woff') format('woff'),
-      url('../fonts/HouschkaPro-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
+    font-family: 'Montserrat';
+    src: local('Montserrat'), 
+    local('Montserrat-Regular'), 
+    url('../fonts/montserrat/montserrat.woff2') format('woff2'), 
+    url('../fonts/montserrat/montserrat.woff') format('woff'), 
+    url('../fonts/montserrat/montserrat.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
+@font-face {
+    font-family: 'Raleway';
+    src: local('Raleway Regular'), 
+    local('Raleway-Regular'), 
+    url('../fonts/raleway/ralewayregular.woff2') format('woff2'), 
+    url('../fonts/raleway/ralewayregular.woff') format('woff'), 
+    url('../fonts/raleway/ralewayregular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway-medium';
+    src: local('Raleway Medium'), 
+    local('Raleway-Medium'), 
+    url('../fonts/raleway/ralewaymedium.woff2') format('woff2'),
+    url('../fonts/raleway/ralewaymedium.woff') format('woff'), 
+    url('../fonts/raleway/ralewaymedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway-semibold';
+    src: local('Raleway SemiBold'), 
+    local('Raleway-SemiBold'), 
+    url('../fonts/raleway/ralewaysemibold.woff2') format('woff2'), 
+    url('../fonts/raleway/ralewaysemibold.woff') format('woff'), 
+    url('../fonts/raleway/ralewaysemibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway-bold';
+    src: local('Raleway Bold'), 
+    local('Raleway-Bold'), 
+    url('../fonts/raleway/ralewaybold.woff2') format('woff2'), 
+    url('../fonts/raleway/ralewaybold.woff') format('woff'), 
+    url('../fonts/raleway/ralewaybold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway-extrabold';
+    src: local('Raleway ExtraBold'), 
+    local('Raleway-ExtraBold'), 
+    url('../fonts/raleway/ralewayextrabold.woff2') format('woff2'), 
+    url('../fonts/raleway/ralewayextrabold.woff') format('woff'), 
+    url('../fonts/raleway/ralewayextrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'), local('Roboto-Regular'), 
+    url('../fonts/roboto/Roboto.woff2') format('woff2'), 
+    url('../fonts/roboto/Roboto.woff') format('woff'), 
+    url('../fonts/roboto/Roboto.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 body {
-  overflow: hidden;
+    margin: 0;
+    overflow-x: hidden;
 }
-
-.main {
-  width: 100vw;
-  height: 100vh;
-  background-image: url(../images/Background.png);
+.arrows-right {
+    top: 50%;
+    right: 8%;
+    position: absolute;
+    height: 73px;
+    width: 40px;
+    background-image: url(../images/right.png);
+    z-index: 10;
 }
-.first-cloud {
-  padding-left: 33px;
+.arrows-left {
+    top: 50%;
+    left: 8%;
+    position: absolute;
+    height: 73px;
+    width: 40px;
+    background-image: url(../images/left-ac.png);
+    z-index: 10;
 }
-.cloud {
-  display: flex;
-  justify-content: space-between;
-  max-width: 787px;
-  margin: 0 auto;
+.arrows-right:hover .arr-right{
+   visibility: hidden;
 }
-
-.description {
-  margin-top: 33px;
-  text-align: center;
+.arrows-left:hover .arr-left{
+    visibility: hidden;
+ }
+.arr-left {
+    position: absolute;
 }
-
-.block-first p{
-  font-size: 72px;
-  font-family: 'Houschka Pro Bold';
-  font-weight: bold;
-  color: white;
-  text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.17);
-  margin: 0;
-  text-transform: uppercase;
-  padding-left: 24px;
+.arr-right {
+    position: absolute;
+    transform: scale(-1, 1);
 }
-.block-second {
-  margin-top: -9px;
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.block-second p {
-  font-size: 13.8px;
-  font-family: 'Houschka Pro';
-  color: rgb(38, 107, 151);
-  padding-right: 2.5px;
+.section-1 {
+    position: relative;
+    background-image: url(../images/photo.png);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
 }
-
-.block-third {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.header {
+    padding-top: 40px;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.input-row {
-  margin-top: 3px;
+.logo-text-hd {
+    font-size: 34px;
+    font-family: "Raleway";
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
 }
-.input-row input {
-  border: 0 none;
-  border-radius: 4px;
-  background-image: -moz-linear-gradient( 90deg, rgb(240,240,240) 0%, rgb(235,235,235) 100%);
-  background-image: -webkit-linear-gradient( 90deg, rgb(240,240,240) 0%, rgb(235,235,235) 100%);
-  background-image: -ms-linear-gradient( 90deg, rgb(240,240,240) 0%, rgb(235,235,235) 100%);
-  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.004),inset 0px 2px 5px 0px rgba(29, 26, 22, 0.2);
-  width: 230px;
-  height: 37px;
-  font-size: 12px;
-  font-family: "Arial";
-  color: rgb(128, 128, 128);
-  background: white;
-  padding-left: 14.5px;
+.menu ul {
+    list-style: none;
+    width: 640px;
+    display: flex;
+    justify-content: space-between;
 }
-.btn {
-  margin-top: 4px;
- 
+.menu ul li a {
+    font-size: 14px;
+    font-family: "Montserrat-light";
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
 }
-.btn button {
-  border-radius: 4px;
-  border: 1px solid rgb(250, 170, 34);
-  background: linear-gradient(rgb(251,197,65), rgb(248,164,38), rgb(248,164,38));
-  width: 96px;
-  height: 40px;
-  color: rgb(255, 255, 255);
-  border: none;
-  text-align: center;
-  font-size: 14px;
-  font-family: 'Houschka Pro Bold';
-  font-weight: bold;
-  text-shadow: 0px 1px 1px rgba(29, 26, 22, 0.2);
-  margin-left: 5px;
+.menu ul li a:hover {
+    color: #c7b299;
+    cursor: pointer;
+}
+.icon-block {
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.icon-block a:hover {
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+.wrap-bd {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 28%;
+}
+.slogan {
+    width: 585px;
+    height: 275px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box-1 p {
+    margin: 0;
+    font-size: 36px;
+    font-family: "Raleway-medium";
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+}
+.box-2 {
+    margin-top: 5px;
+}
+.box-2 p {
+    margin: 0;
+    font-size: 52px;
+    font-family: "Raleway-extrabold";
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+}
+.box-3 {
+    margin-top: 15px;
+}
+.box-3 p {
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Montserrat-light";
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+}
+.box-4 {
+    margin-top: 50px;
+}
+.box-4 button {
+    background-color: #998675;
+    border-radius: 5px;
+    box-shadow: inset 0px 3px 0px 0px rgba(115, 99, 87, 0.004);
+    width: 170px;
+    height: 53px;
+    font-size: 14px;
+    font-family: "Raleway-extrabold";
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    line-height: 1.643;
+}
+.box-4 button:hover {
+    cursor: pointer;
+    background-color: #99864C;
+}
+.slides {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    position: absolute;
+    bottom: 3%;
+    left: calc(50% - 50px);
+}
+.circle {
+    width: 15px;
+    height: 15px;
+    background-image: url(../images/01.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.circle:hover {
+    background-image: url(../images/02.png);
 }
 
 .section-2 {
-  background-image: url(../images/Rectangle\ 1.png);
-  width: 100vw;
-  margin-top: 208px;
-  height: 100%;
+    max-width: 1920px;
+    display: flex;
+    justify-content: center;
 }
-
-.ice {
-  text-align: center;
-  margin-top: -200px;
-  padding-right: 2px;
+.wrap-2 {
+    width: 1175px;
 }
-.ship {
-  width: 100%;
-  transform-origin: bottom;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  
+.text-one p {
+    font-size: 30px;
+    font-family: "Raleway-semibold";
+    color: rgb(85, 85, 85);
+    line-height: 1.2;
+    text-align: center;
 }
-.ship:before {
-  content: attr(data-content);
-  display: inline-block;
-  position: absolute;
-  left: .2em;
-  width: 9em;
-  height: 2em;
-  padding: .2em;
-  background-image: url(../images/ship.png);
-  background-repeat: no-repeat;
-  animation: timing 20s infinite;
-  animation-timing-function: ease;
+.text-two {
+    max-width: 760px;
+    text-align: center;
+    margin: 0 auto;
 }
-.bounce-1 {
-  animation-name: bounce-1;
-  animation-timing-function: linear;
+.text-two p {
+    font-size: 16px;
+    font-family: "Montserrat-light";
+    color: rgb(140, 140, 140);
+    line-height: 1.75;
 }
-@keyframes timing {
-  50%{
-    left: 100%;
-    margin-left: -3.6em;
-  }
-  5%{
-    transform: scale(-1, 1);
-  }
+.all {
+    width: 70px;
+    height: 32px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "Montserrat-light";
+    color: rgb(140, 140, 140);
+    line-height: 1.5;
+    border: 1px solid #ebebeb;
+    padding: 0;
 }
-@keyframes bounce-1 {
-  0%   { transform: translateY(-10px); }
-  50%  { transform: translateY(-30px); }
-  100% { transform: translateY(-10px); }
+.web-design {
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "Montserrat-light";
+    line-height: 1.5;
+    width: 124px;
+    height: 32px;
+    color: rgb(140, 140, 140);
+    padding: 0;
 }
-
-.line-one {
-  height: 4px;
-  width: 100vw;
-  background: #ddecfa;
+.mobile-app {
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "Montserrat-light";
+    line-height: 1.5;
+    width: 124px;
+    height: 32px;
+    color: rgb(140, 140, 140);
+    padding: 0;
 }
-.line-two {
-  height: 9px;
-  width: 100vw;
-  background: #327DBD;
+.illustration {
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "Montserrat-light";
+    line-height: 1.5;
+    width: 124px;
+    height: 32px;
+    color: rgb(140, 140, 140);
+    padding: 0;
 }
-.crono {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  margin-top: -263px;
-  
+.photography{
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "Montserrat-light";
+    line-height: 1.5;
+    width: 139px;
+    height: 32px;
+    color: rgb(140, 140, 140);
+    padding: 0;
 }
-.cr-block {
-  width: 70px;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  font-family: 'Houschka Pro';
-  color: rgb(38, 107, 151);
-  z-index: 31;
-  background: #b9d6ef;
-  border-radius: 50%;
-  margin: 0 auto;
+.btn:hover {
+    background: #998675;
+    color: white;
+    border: none;
 }
-.cr-wrap {
-  z-index: 1000;
-  margin: 20px 20px 20px 20px;
+.text-three {
+    width: 610px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
 }
-.cr-text {
-  margin-top: 6px;
-  font-size: 24px;
-  font-family: 'Houschka Pro Bold';
-  font-weight: bold;
-  color: rgb(243, 243, 243);
-  z-index: 31;
-}
-.cntr-b {
-  margin: 21px 12.5px 19px 13px;
-}
-.cntr-a {
-  margin: 20px 20px 18px 20px;
-}
-
