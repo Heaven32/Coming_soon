@@ -225,7 +225,6 @@ body {
 .box-4 button {
     background-color: #998675;
     border-radius: 5px;
-    box-shadow: inset 0px 3px 0px 0px rgba(115, 99, 87, 0.004);
     width: 170px;
     height: 53px;
     font-size: 14px;
@@ -233,6 +232,7 @@ body {
     color: rgb(255, 255, 255);
     text-transform: uppercase;
     line-height: 1.643;
+    border: none;
 }
 .box-4 button:hover {
     cursor: pointer;
