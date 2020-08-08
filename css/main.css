@@ -22,29 +22,29 @@ src: url('data:application/octet-stream;base64,d09GRgABAAAAAAvIAA8AAAAAFGwAAQAAA
    .box-2 input {
     margin-right: 2px;
    }
-   .box-1 input {
-       width: 96%;
-       height: 30px;
-       margin-bottom: 5px;
-       font-size: 24px;
-       font-weight: bold;
-   }
-.box-1 input[type="time"]::-webkit-calendar-picker-indicator {
-    background: none;
-}
+
 .box-3 button:active  {
     background: black;
     color: white;
 }
-.box-1 input[type="time"]::after {
+.box-1 {
+  border: 1px solid;
+  padding: 9px;
+  font-size: 31px;
+  font-weight: bold;
+}
+.icon::after {
     font-family: 'fontello';
     content: '\e832';
     -moz-animation: spin 2s infinite linear;
     -o-animation: spin 2s infinite linear;
     -webkit-animation: spin 2s infinite linear;
     animation: spin 2s infinite linear;
+    margin-left: 15px;
     display: inline-block;
-    margin-right: 5px;
+  }
+  .box-3:hover + .box-1 {
+    background: red;
   }
   .box-3 button {
       width: 70px;
