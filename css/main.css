@@ -33,7 +33,10 @@ src: url('data:application/octet-stream;base64,d09GRgABAAAAAAvIAA8AAAAAFGwAAQAAA
   font-size: 31px;
   font-weight: bold;
 }
-.icon::after {
+#icon {
+  display: none;
+}
+#icon::after {
     font-family: 'fontello';
     content: '\e832';
     -moz-animation: spin 2s infinite linear;
@@ -43,9 +46,7 @@ src: url('data:application/octet-stream;base64,d09GRgABAAAAAAvIAA8AAAAAFGwAAQAAA
     margin-left: 15px;
     display: inline-block;
   }
-  .box-3:hover + .box-1 {
-    background: red;
-  }
+
   .box-3 button {
       width: 70px;
       background: white;
