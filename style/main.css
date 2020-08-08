@@ -6,7 +6,7 @@ body {
     align-items: center;
 }
 .box {
-    border: 1px solid black;
+    border: 2px solid black;
     width: 220px;
 }
 .main {
@@ -56,7 +56,7 @@ body {
     40% {bottom : 40%; width: 110px;height: 35px; left: 80%;}
 
     45% {bottom : 100%; width: 100px;height: 100px;}
-    50% {bottom : 0%; width: 110px;height: 35px; left: 100%;}
+    50% {bottom : 0%; width: 110px;height: 35px; left: 90%;}
 
     55% {bottom : 100%; width: 100px;height: 100px;}
     60% {bottom : 10%; width: 110px;height: 35px; left: 80%;}
