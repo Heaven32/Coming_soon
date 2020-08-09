@@ -76,7 +76,7 @@ body {
     height: 100px;
     width: 100px;
     border-radius: 100%;
-    background-image: url(/eight-ball.png);
+    background-image: url(../eight-ball.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
