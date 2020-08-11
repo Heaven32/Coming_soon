@@ -1,0 +1,30 @@
+.main {
+    position: relative;
+    background-image: url('https://cdn.discordapp.com/attachments/729694941495689306/742799938815262750/clock1.png');
+    width: 300px;
+    height: 300px;
+}
+.arrow {
+    position: absolute;
+    width: 3px;
+    height: 45px;
+    left: 149.8px;
+    top: 105.1px;
+    background: red;
+    animation: nev 60s infinite steps(60);
+    transform-origin: 0 45px;
+    }
+    .arrow::before {
+        content: '^';
+        color: black;
+        position: absolute;
+        top: -15px;
+        right: -11px;
+        font-weight: bold;
+        font-size: 43px;
+    }
+    @keyframes nev {
+    100%{
+    transform: rotate(360deg); /* Стрелка делает полный круг */
+    }
+    }
