@@ -1,145 +1,22 @@
-.box {
-    width: 850px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    background-color: grey;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    border: 2px solid gold;
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  height: 100%;
+  border: 2px solid gold;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
 }
-.btn {
-    position: relative;
-    letter-spacing: 3px;
-    line-height: 10px;
-    font-variant: small-caps;
-    font-size: 18px;
-    font-weight: bold;
-    color: gold;
-    text-decoration: none;
-    text-shadow: 0 -1px rgba(0,0,0,.5);
-    user-select: none;
-    padding: 1.7em 3.5em;
-    border: 1px solid rgb(80,32,0);
-    border-radius: 5px;
-    outline: none;
-    background: rgb(147,80,36) linear-gradient(rgb(106,58,26), rgb(147,80,36) 80%);
-    box-shadow:
-     0 6px rgb(86,38,6),
-     0 3px 15px rgba(0,0,0,.4),
-     inset 0 1px rgba(255,255,255,.3),
-     inset 0 0 3px rgba(255,255,255,.5);
-     -webkit-transition: ease 0.3s;
-     transition: ease 1s;
-     overflow: hidden;
-  } 
 
-  .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100px;
-      width: 50px;
-      height: 100%;
-      background-color: gold;
-      filter: blur(30px);
-      transform: skewX(-30deg);
-      transition: 1s;
-  }
-  .btn:hover::before,
-  .btn:focus::before {
-      left: calc(100% + 150px);
-      transition: 1s;
-  }
-  .btn:hover {
-    background: rgb(167,91,41) linear-gradient(rgb(126,69,31), rgb(167,91,41) 80%);
-  }
-  .btn:active {
-    background: rgb(120,63,25) linear-gradient(rgb(120,63,25) 20%, rgb(167,91,41));
-    box-shadow:
-     0 2px rgb(86,38,6),
-     0 1px 6px rgba(0,0,0,.4),
-     inset 0 1px rgba(255,255,255,.3),
-     inset 0 0 3px rgba(255,255,255,.5);
-    -webkit-transform: translate(0, 4px);
-    transform: translate(0, 4px);
-  }
-
-  .accordion {   
-    width: 830px;  
-    overflow: hidden;     
-    color: gold;   
-    background:#414141;   
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    border: 2px solid gold;
+.main .block {
+  min-width: 120px;
+  height: 120px;
+  border: 2px solid black;
+  margin: 10px;
 }
-.accordion section{   
-    float: left;  
-    overflow: hidden;   
-    color:#333;   
-    cursor: pointer;   
-    background: #333;   
-    margin: 3px;
-    border: 1px solid gold;   
-}  
-.accordion section p {   
-    display:none;   
-}
-.accordion section:hover {   
-    background:#FFF;   
-}  
-.accordion section:hover h2 {  
-    width:100%;  
-}  
-.accordion section:hover h2 a{   
-    color:gold;   
-   
-}  
-.accordion section:hover p {  
-    display:block;  
-    padding: 0 20px 0 20px;
-    font-size: 16px;
-}  
-.accordion section h2 a{  
-    padding:8px 10px;  
-    display:block;   
-    font-size:20px;   
-    font-weight:normal;  
-    color:gold;   
-    text-decoration:none;   
-}
-.horizontal section{   
-    width:5%;   
-    height:250px;   
-    -moz-transition: width 0.8s ease-out;   
-    -webkit-transition:width 0.8s ease-out;  
-    -o-transition:width 0.8s ease-out;  
-    transition:width 0.8s ease-out;  
-}
-.horizontal section h2 {   
-    -webkit-transform:rotate(90deg);  
-    -moz-transform:rotate(90deg);  
-    -o-transform: rotate(90deg);  
-    transform: rotate(90deg);  
-    width:240px;   
-    position:relative;   
-    left:-100px;   
-    top:85px;  
-}   
-
-.horizontal :hover{   
-    width:100%;  
-}  
-.horizontal :hover h2{   
-    top:0px;  
-    left:0;  
-    -webkit-transform:rotate(0deg);  
-    -moz-transform:rotate(0deg);  
-    -o-transform: rotate(0deg);  
-    transform: rotate(0deg);   
-}
+/*# sourceMappingURL=style.css.map */

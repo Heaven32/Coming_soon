@@ -1,0 +1,20 @@
+$width: 120px;
+$heigth: 120px;
+$border: 2px solid black;
+$margin: 10px;
+
+.main {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    border: 2px solid gold;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    .block {
+        min-width: $width;
+        height: $heigth;
+        border: $border;
+        margin: $margin;
+    }
+}
