@@ -1,20 +1,99 @@
-$width: 120px;
-$heigth: 120px;
-$border: 2px solid black;
-$margin: 10px;
+$one: 1px solid black;
+$two: 1px solid yellow;
+$three: 1px solid red;
+$four: 1px solid green;
+$five: 1px solid blue;
+$six: 1px solid grey;
+$seven: 1px solid pink;
+
 
 .main {
-    display: flex;
-    width: 50%;
-    height: 100%;
-    border: 2px solid gold;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-    .block {
-        min-width: $width;
-        height: $heigth;
-        border: $border;
-        margin: $margin;
+    width: 100vw;
+    .header {
+        text-align: center;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        border: $one;
+        .logo {
+            img {
+                width: 100px;
+                height: 80px;
+            }
+        }
+        .navigation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a {
+                font-size: 30px;
+                text-decoration: none;
+            }
+        }
     }
+    .article-1 {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        border: $two;
+        .first{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+            .block {
+                width: 100px;
+                height: 200px;
+                border: $three;
+                padding: 10px;
+            }
+        }
+        .second {
+            .box-1 {
+                width: 50%;
+                border: $six;
+                float: left;
+                margin: 10px;
+                padding: 10px;
+            }
+            .box-2 {
+                width: 60%;
+                border: $six;
+                float: right;
+                margin: 10px;
+                padding: 10px;
+            }
+            .box-3 {
+                img {
+
+                }
+            }
+        }
+    }
+    .article-2 {
+        height: 50px;
+        width: 80%;
+        margin: 0 auto;
+        overflow-y: scroll;
+        p {
+            font-size: 25px
+        }
+    }
+    .article-3 {
+        .third {
+            .rows {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-gap: 10px;
+                .row {
+                    border: $seven;
+                    padding: 10px;
+                }
+            }
+            .image {
+                text-align: center;
+                img {
+                    width: 50%;
+                }
+            }
+        }
+    }
+
 }

@@ -1,22 +1,106 @@
 .main {
+  width: 100vw;
+}
+
+.main .header {
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 60% 40%;
+      grid-template-columns: 60% 40%;
+  border: 1px solid black;
+}
+
+.main .header .logo img {
+  width: 100px;
+  height: 80px;
+}
+
+.main .header .navigation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 50%;
-  height: 100%;
-  border: 2px solid gold;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0 auto;
 }
 
-.main .block {
-  min-width: 120px;
-  height: 120px;
-  border: 2px solid black;
+.main .header .navigation a {
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.main .article-1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 70%;
+      grid-template-columns: 30% 70%;
+  border: 1px solid yellow;
+}
+
+.main .article-1 .first {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.main .article-1 .first .block {
+  width: 100px;
+  height: 200px;
+  border: 1px solid red;
+  padding: 10px;
+}
+
+.main .article-1 .second .box-1 {
+  width: 50%;
+  border: 1px solid grey;
+  float: left;
   margin: 10px;
+  padding: 10px;
+}
+
+.main .article-1 .second .box-2 {
+  width: 60%;
+  border: 1px solid grey;
+  float: right;
+  margin: 10px;
+  padding: 10px;
+}
+
+.main .article-2 {
+  height: 50px;
+  width: 80%;
+  margin: 0 auto;
+  overflow-y: scroll;
+}
+
+.main .article-2 p {
+  font-size: 25px;
+}
+
+.main .article-3 .third .rows {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  grid-gap: 10px;
+}
+
+.main .article-3 .third .rows .row {
+  border: 1px solid pink;
+  padding: 10px;
+}
+
+.main .article-3 .third .image {
+  text-align: center;
+}
+
+.main .article-3 .third .image img {
+  width: 50%;
 }
 /*# sourceMappingURL=style.css.map */
