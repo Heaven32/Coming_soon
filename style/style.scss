@@ -91,9 +91,10 @@ $size: 10px;
         }
     }
     .article-2 {
+        border: $four;
         height: 50px;
         width: 80%;
-        margin: 0 auto;
+        margin: 20px auto;
         overflow-y: scroll;
         p {
             font-size: 16px
@@ -111,6 +112,7 @@ $size: 10px;
                 }
             }
             .image {
+                margin-top: 20px;
                 text-align: center;
                 img {
                     width: 100%;
