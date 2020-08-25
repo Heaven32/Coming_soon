@@ -1,7 +1,4 @@
-.main {
-  width: 100vw;
-}
-
+/********* MAIN *********/
 .main .header {
   text-align: center;
   display: -ms-grid;
@@ -44,32 +41,77 @@
 .main .article-1 .first {
   display: -ms-grid;
   display: grid;
+  -ms-grid-rows: 42% 43% 12%;
+      grid-template-rows: 42% 43% 12%;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 8px;
+  padding: 10px;
 }
 
 .main .article-1 .first .block {
-  width: 100px;
-  height: 200px;
   border: 1px solid red;
-  padding: 10px;
+  font-size: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.main .article-1 .second {
+  display: -ms-grid;
+  display: grid;
+  font-size: 10px;
+      grid-template-areas: "box1 box1 ." ". box2 box2" "box3 box3 box3";
+  -ms-grid-rows: 147px 125px;
+      grid-template-rows: 147px 125px;
+  -ms-grid-columns: 40% 9%;
+      grid-template-columns: 40% 9%;
+  grid-row-gap: 5px;
 }
 
 .main .article-1 .second .box-1 {
-  width: 50%;
   border: 1px solid grey;
-  float: left;
-  margin: 10px;
-  padding: 10px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: box1;
+}
+
+.main .article-1 .second .box-1 img {
+  max-width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  float: right;
 }
 
 .main .article-1 .second .box-2 {
-  width: 60%;
   border: 1px solid grey;
-  float: right;
-  margin: 10px;
-  padding: 10px;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: box2;
+}
+
+.main .article-1 .second .box-2 img {
+  max-width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  float: left;
+}
+
+.main .article-1 .second .box-3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: box3;
+}
+
+.main .article-1 .second .box-3 img {
+  width: 100%;
 }
 
 .main .article-2 {
@@ -80,7 +122,7 @@
 }
 
 .main .article-2 p {
-  font-size: 25px;
+  font-size: 16px;
 }
 
 .main .article-3 .third .rows {
@@ -101,6 +143,21 @@
 }
 
 .main .article-3 .third .image img {
-  width: 50%;
+  width: 100%;
+}
+
+/********* MEDIA ********/
+@media screen and (max-width: 400px) {
+  .second {
+    -ms-grid-columns: 0% 100% !important;
+        grid-template-columns: 0% 100% !important;
+  }
+  .article-2 {
+    display: none;
+  }
+  .rows {
+    -ms-grid-columns: initial !important;
+        grid-template-columns: initial !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */
