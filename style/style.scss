@@ -1,5 +1,9 @@
+@media screen and (min-width: 400px) {
+    body {
+        overflow: hidden;
+    }
+}
 body {
-    overflow: hidden;
     font-size: 12px;
 }
 div {
@@ -8,7 +12,7 @@ div {
 @media screen and (min-width: 400px) {
     .main {
         grid-template-columns: 2fr 4fr 1.5fr 4.5fr;
-        grid-template-rows: 0.5fr 1.5fr 0.5fr 50px 0.5fr;
+        grid-template-rows: 55px 1.5fr 0.5fr 50px 0.5fr;
         grid-template-areas: 
         "lo lo lo as"
         "ae tk tk tk"
@@ -81,11 +85,13 @@ div {
         }  
         .box {
             justify-self: center;
-            width: 100px;
-            max-height: 150px;
+            max-width: 100px;
+            min-width: 70px;
+            max-height: 100px;
             display: flex;
             align-items: center;
             justify-items: center;
+            overflow-y: scroll;
         }
     }    
     @media screen and (min-width: 400px) {
@@ -140,13 +146,15 @@ div {
             border-radius: 50%;
         }
         .block-1 {
-            height: fit-content;
+            overflow-y: scroll;
+            max-height: 100px;
             img {
                 float: right;
             }
         }
         .block-2 {
-            height: fit-content;
+            overflow-y: scroll;
+            max-height: 100px;
             justify-self: end;
             img {
                 float: left;
@@ -160,6 +168,14 @@ div {
         justify-items: center;
         img {
             max-width: 185px;
+        } 
+    }
+    @media screen and (max-width: 400px) {
+        .flowers {
+            img {
+                max-width: -webkit-fill-available;
+                overflow: hidden;
+            }
         }
     }
     .one-row {
@@ -194,6 +210,10 @@ div {
     .aside-two {
         display: flex;
         grid-area: ao;
+        .block {
+            overflow-y: scroll;
+            max-height: 60px;
+        }
     }
     @media screen and (max-width: 400px){
         .aside-two {
@@ -207,6 +227,14 @@ div {
         justify-items: center;
         img {
             max-width: 200px;
+        }
+    }
+    @media screen and (max-width: 400px) {
+        .hills {
+            img {
+                max-width: -webkit-fill-available;
+                overflow: hidden;
+            }
         }
     }
 }
