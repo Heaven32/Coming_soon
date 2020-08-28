@@ -1,162 +1,212 @@
-$one: 1px solid black;
-$two: 1px solid yellow;
-$three: 1px solid red;
-$four: 1px solid green;
-$five: 1px solid blue;
-$six: 1px solid grey;
-$seven: 1px solid pink;
-$size: 10px;
-
-
-
-/********* MAIN *********/
-
-.main {
-    .header {
-        text-align: center;
-        display: grid;
-        grid-template-columns: 50% 50%;
-        border: $one;
+body {
+    overflow: hidden;
+    font-size: 12px;
+}
+div {
+    border: 1px solid black;
+}
+@media screen and (min-width: 400px) {
+    .main {
+        grid-template-columns: 2fr 4fr 1.5fr 4.5fr;
+        grid-template-rows: 0.5fr 1.5fr 0.5fr 50px 0.5fr;
+        grid-template-areas: 
+        "lo lo lo as"
+        "ae tk tk tk"
+        "ae fs fs fs"
+        "ow ow ow ow"
+        "ao ao ao ao"
+        "hs hs hs hs"
+        ;
+    }
+}
+@media screen and (max-width: 400px) {
+    .main {
         .logo {
-            img {
-                max-width: 100px;
-                max-height: 80px;
-            }
+            justify-items: center;
+            align-items: center;
+            display: grid;
         }
-        .navigation {
+        grid-template-columns: 2fr 4fr 1.5fr 4.5fr;
+        grid-template-rows: 0.5fr 0.5fr 1fr 2fr;
+        grid-template-areas: 
+        "lo lo lo lo"
+        "as as as as"
+        "ae tk tk tk"
+        "ae fs fs fs"
+        "ao ao ao ao"
+        "hs hs hs hs"
+        ;
+    }
+}
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    .logo {
+        grid-area: lo;
+        img {
+            max-width: 50px;
+        }
+    }
+    .about-scss {
+        grid-area: as;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        a {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+    }
+    .aside-one {
+        grid-area: ae;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        font-size: 12px;
+        .box-1 {
+            grid-area: b1;
+        }
+        .box-2 {
+            grid-area: b2;
+        }
+        .box-3 {
+            grid-area: b3;
+        }
+        .box-4 {
+            grid-area: b4;
+        }  
+        .box {
+            justify-self: center;
+            width: 100px;
+            max-height: 150px;
             display: flex;
             align-items: center;
-            justify-content: space-around;
-            a {
-                font-size: 16px;
-                text-decoration: none;
-            }
+            justify-items: center;
         }
-    }
-    .article-1 {
-        display: grid;
-        grid-template-columns: 30% 70%;
-        border: $two;
-        .first{
-            display: grid;
-            grid-template-rows: 35% 35% 12%;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 8px;
-            padding: 10px;
-            .block {
-                border: $three;
-                font-size: $size;
-                display: flex;
-                align-items: center;
-                text-align: center;
-            }
-            .item-a, item-d {
-                overflow-y: scroll;
-            }
-        }
-        .second {
-            display: grid;
-            font-size: $size;
+    }    
+    @media screen and (min-width: 400px) {
+        .aside-one {
             grid-template-areas: 
-            "box1 box1 ."
-            ". box2 box2"
-            "box3 box3 box3";
-            grid-template-rows: 13% 13%;
-            grid-template-columns: 40% 9%;
-            grid-row-gap: 5px;
-            .box-1 {
-                border: $six;
-                grid-area: box1;
-                img {
-                    max-width: 80px;
-                    height: 80px;
-                    border-radius: 50%;
-                    float: right;
-                }
+            " b1 ."
+            "b1 b2"
+            "b3 b2"
+            "b3 b4"
+            ". b4"
+            ;
+        }
+    }
+    @media screen and (max-width: 400px) {
+        .aside-one {
+            grid-template-areas: 
+            ". b1"
+            "b2 b1"
+            "b2 b3"
+            "b4 b3"
+            "b4 ."
+            ;
+        }
+    }
+    @media screen and (max-width: 400px) {
+        .two-block{
+            .block-1 {
+                width: 100%;
             }
-            .box-2 {
-                border: $six;
-                grid-area: box2;
-                img {
-                    max-width: 80px;
-                    height: 80px;
-                    border-radius: 50%;
-                    float: left;
-                }
-            }
-            .box-3 {
-                grid-area: box3;
-                img {
-                    width: 100%;
-                    height: auto;
-                }
+            .block-2 {
+                width: 100%;
             }
         }
     }
-    .article-2 {
-        border: $four;
-        height: 50px;
-        width: 100%;
-        margin: 20px auto;
-        overflow-y: scroll;
-        p {
-            font-size: 16px
-        }
-    }
-    .article-3 {
-        .third {
-            .rows {
-                display: grid;
-                grid-template-columns: 50% 50%;
-                grid-gap: 10px;
-                .row {
-                    border: $seven;
-                    padding: 10px;
-                }
+    @media screen and (min-width: 400px) {
+        .two-block{
+            .block-1 {
+                width: 50%;
             }
-            .image {
-                margin-top: 20px;
-                text-align: center;
-                img {
-                    width: 100%;
-                }
+            .block-2 {
+                width: 60%;
             }
         }
     }
-
-}
-
-/********* MEDIA ********/
-
-@media screen and (max-width: 400px){
-    .logo {
-        img {
-            max-width: 50px !important;
-            max-height: 30px !important;
-        }
-    }
-    .first {
-        grid-gap: inherit !important;
-        padding: inherit !important;
-    }
-    .second{
-            grid-template-columns: 0% 100% !important;
-            grid-template-rows: 85px 83px !important;
-    }
-    .article-2 {
-        display: none;
-    }
-    .article-3 {
+    .two-block {
+        grid-area: tk;
+        display: grid;
         font-size: 12px;
-        .image {
-            margin-top: 0!important;
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .block-1 {
+            height: fit-content;
+            img {
+                float: right;
+            }
+        }
+        .block-2 {
+            height: fit-content;
+            justify-self: end;
+            img {
+                float: left;
+            }
         }
     }
-    .rows {
-        grid-template-columns: initial !important;
-        grid-gap: inherit !important;
-        .row {
-            padding: 0 !important;
+    .flowers {
+        grid-area: fs;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        img {
+            max-width: 185px;
+        }
+    }
+    .one-row {
+        grid-area: ow;
+        width:100%;
+        white-space:nowrap;
+        overflow:hidden;
+        display: flex;
+        align-items: center;
+        span {
+            color:#212121;
+            font-size:14px;
+            display:inline-block;
+            padding-left:100%;
+            -webkit-animation: marquee 10s infinite linear;
+            animation: marquee 10s infinite linear;
+        }
+        @-webkit-keyframes marquee {
+            0%{-webkit-transform: translate(0, 0);}
+            100%{-webkit-transform: translate(-100%, 0);}
+        }
+        @keyframes marquee{
+            0%{transform: translate(0, 0);}
+            100%{transform: translate(-100%, 0)}
+        }
+    }
+    @media screen and (max-width: 400px){
+        .one-row {
+            display: none;
+        }
+    }
+    .aside-two {
+        display: flex;
+        grid-area: ao;
+    }
+    @media screen and (max-width: 400px){
+        .aside-two {
+            display: block;
+        }
+    }
+    .hills {
+        grid-area: hs;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        img {
+            max-width: 200px;
         }
     }
 }
