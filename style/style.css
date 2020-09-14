@@ -1,292 +1,41 @@
-@media screen and (min-width: 400px) {
-  body {
-    overflow: hidden;
+.level-1 {
+       
+    width: fit-content;
+    text-align: center;
   }
-}
-
-body {
-  font-size: 12px;
-}
-
-div {
-  border: 1px solid black;
-}
-
-@media screen and (min-width: 400px) {
-  .main {
-    -ms-grid-columns: 2fr 4fr 1.5fr 4.5fr;
-        grid-template-columns: 2fr 4fr 1.5fr 4.5fr;
-    -ms-grid-rows: 55px 1.5fr 0.5fr 50px 0.5fr;
-        grid-template-rows: 55px 1.5fr 0.5fr 50px 0.5fr;
-        grid-template-areas: "lo lo lo as" "ae tk tk tk" "ae fs fs fs" "ow ow ow ow" "ao ao ao ao" "hs hs hs hs";
+  .btn {
+    outline: none;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    width: 3.3em;
+    height: 3.3em;
+    line-height: 1.3em;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px rgba(255,255,255,.3);
+    font-size: 300%;
+    font-weight: 900;
+    color: #000;
+    border-radius: 100%;
+    background: rgb(144,142,105) linear-gradient(rgb(185,181,151), rgb(144,142,105));
+    box-shadow:
+    inset 0 -2px 1px rgba(0,0,0,.5),
+    inset 0 2px 1px rgba(255,255,255,.9),
+    0 4px 4px rgba(0,0,0,.9);
   }
-}
-
-@media screen and (max-width: 400px) {
-  .main {
-    -ms-grid-columns: 2fr 4fr 1.5fr 4.5fr;
-        grid-template-columns: 2fr 4fr 1.5fr 4.5fr;
-    -ms-grid-rows: 0.5fr 0.5fr 1fr 2fr;
-        grid-template-rows: 0.5fr 0.5fr 1fr 2fr;
-        grid-template-areas: "lo lo lo lo" "as as as as" "ae tk tk tk" "ae fs fs fs" "ao ao ao ao" "hs hs hs hs";
+  .btn:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 12%;
+    left: 12%;
+    right: 12%;
+    bottom: 12%;
+    border-radius: 100%;
+    background: rgb(242,203,20) linear-gradient(rgb(242,203,20), rgb(255,182,7));
+    box-shadow:
+    inset 0 2px 1px rgba(0,0,0,.5),
+    inset 0 -2px 1px rgba(255,255,255,.3);
   }
-  .main .logo {
-    justify-items: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    display: -ms-grid;
-    display: grid;
-  }
-}
-
-.main {
-  width: 100vw;
-  height: 100vh;
-  display: -ms-grid;
-  display: grid;
-}
-
-.main .logo {
-  grid-area: lo;
-}
-
-.main .logo img {
-  max-width: 50px;
-}
-
-.main .about-scss {
-  grid-area: as;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-}
-
-.main .about-scss a {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 20px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.main .aside-one {
-  grid-area: ae;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: (1fr)[4];
-      grid-template-rows: repeat(4, 1fr);
-  font-size: 12px;
-}
-
-.main .aside-one .box-1 {
-  grid-area: b1;
-}
-
-.main .aside-one .box-2 {
-  grid-area: b2;
-}
-
-.main .aside-one .box-3 {
-  grid-area: b3;
-}
-
-.main .aside-one .box-4 {
-  grid-area: b4;
-}
-
-.main .aside-one .box {
-  justify-self: center;
-  max-width: 100px;
-  min-width: 70px;
-  max-height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
-  overflow-y: scroll;
-}
-
-@media screen and (min-width: 400px) {
-  .main .aside-one {
-        grid-template-areas: " b1 ." "b1 b2" "b3 b2" "b3 b4" ". b4";
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .main .aside-one {
-        grid-template-areas: ". b1" "b2 b1" "b2 b3" "b4 b3" "b4 .";
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .main .two-block .block-1 {
-    width: 100%;
-  }
-  .main .two-block .block-2 {
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 400px) {
-  .main .two-block .block-1 {
-    width: 50%;
-  }
-  .main .two-block .block-2 {
-    width: 60%;
-  }
-}
-
-.main .two-block {
-  grid-area: tk;
-  display: -ms-grid;
-  display: grid;
-  font-size: 12px;
-}
-
-.main .two-block img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
-.main .two-block .block-1 {
-  overflow-y: scroll;
-  max-height: 100px;
-}
-
-.main .two-block .block-1 img {
-  float: right;
-}
-
-.main .two-block .block-2 {
-  overflow-y: scroll;
-  max-height: 100px;
-  -ms-grid-column-align: end;
-      justify-self: end;
-}
-
-.main .two-block .block-2 img {
-  float: left;
-}
-
-.main .flowers {
-  grid-area: fs;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
-}
-
-.main .flowers img {
-  max-width: 185px;
-}
-
-@media screen and (max-width: 400px) {
-  .main .flowers img {
-    max-width: -webkit-fill-available;
-    overflow: hidden;
-  }
-}
-
-.main .one-row {
-  grid-area: ow;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.main .one-row span {
-  color: #212121;
-  font-size: 14px;
-  display: inline-block;
-  padding-left: 100%;
-  -webkit-animation: marquee 10s infinite linear;
-  animation: marquee 10s infinite linear;
-}
-
-@-webkit-keyframes marquee {
-  0% {
-    -webkit-transform: translate(0, 0);
-  }
-  100% {
-    -webkit-transform: translate(-100%, 0);
-  }
-}
-
-@keyframes marquee {
-  0% {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-  }
-  100% {
-    -webkit-transform: translate(-100%, 0);
-            transform: translate(-100%, 0);
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .main .one-row {
-    display: none;
-  }
-}
-
-.main .aside-two {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  grid-area: ao;
-}
-
-.main .aside-two .block {
-  overflow-y: scroll;
-  max-height: 60px;
-}
-
-@media screen and (max-width: 400px) {
-  .main .aside-two {
-    display: block;
-  }
-}
-
-.main .hills {
-  grid-area: hs;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
-}
-
-.main .hills img {
-  max-width: 200px;
-}
-
-@media screen and (max-width: 400px) {
-  .main .hills img {
-    max-width: -webkit-fill-available;
-    overflow: hidden;
-  }
-}
-/*# sourceMappingURL=style.css.map */
