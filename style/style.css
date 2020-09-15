@@ -1,6 +1,28 @@
+.file{
+  position: absolute;
+  left: 45%;
+  top: 5%;
+  height: 100px;
+  width: 100px;
+  background: darkorange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .level{
-     
-    width: fit-content;
+    width: 200px;
     text-align: center;
   }
   .btn {

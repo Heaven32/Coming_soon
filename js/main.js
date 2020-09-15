@@ -121,15 +121,12 @@ battleTwo.addEventListener('click', () => {
   randOne = Math.floor(Math.random() * firstFleetOfShips.length);
   randTwo = Math.floor(Math.random() * secondFleetOfShips.length);
  
-  while((firstFleetOfShips[randOne].healthPoints > 4 || firstFleetOfShips[randOne].healthPoints === 0) && 
-  (secondFleetOfShips[randTwo].healthPoints > 4 || secondFleetOfShips[randTwo].healthPoints === 0)) {
+  while((firstFleetOfShips[randOne].healthPoints > 4) && (secondFleetOfShips[randTwo].healthPoints > 4)) {
     round += 1;
-
-    if(secondFleetOfShips[randTwo].healthPoints === 0 || secondFleetOfShips[randTwo].healthPoints < 0){
-      secondFleetOfShips.slice(secondFleetOfShips[randTwo])
-    }
-    if(firstFleetOfShips[randOne].healthPoints === 0 || firstFleetOfShips[randOne].healthPoints < 0) {
-      firstFleetOfShips.slice(firstFleetOfShips[randOne])
+    if(secondFleetOfShips[randTwo].healthPoints === 0 || secondFleetOfShips[randTwo].healthPoints < 0) {
+      delete secondFleetOfShips[randTwo];
+    }else if(firstFleetOfShips[randOne].healthPoints === 0 || firstFleetOfShips[randOne].healthPoints < 0) {
+      delete firstFleetOfShips[randOne];
     }
       firstFleetOfShips[randOne].healthPoints -= secondFleetOfShips[randTwo].damage;
       secondFleetOfShips[randTwo].healthPoints -= firstFleetOfShips[randOne].damage;
