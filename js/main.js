@@ -28,109 +28,43 @@ battleOne.addEventListener('click', () => {
 /*********** 2 -level **********/
 
 const battleTwo = document.querySelector('.battle_two');
-const firstFleetOfShips = [
-  destroyersOne = {
+let randOne = null;
+let randTwo = null;
+const TypeOfShips = [
+  destroyers = {
     healthPoints: 45,
     damage: 10,
   },
-  destroyersTwo = {
-    healthPoints: 45,
-    damage: 10,
-  },
-  destroyersThree = {
-    healthPoints: 45,
-    damage: 10,
-  },
-  battleshipsOne = {
+  battleships = {
     healthPoints: 100,
     damage: 4,
   },
-  battleshipsTwo = {
-    healthPoints: 100,
-    damage: 4,
-  },
-  aircraftСarriersOne = {
+  aircraftСarriers = {
     healthPoints: 15,
     damage: 40,
   },
-  aircraftСarriersTwo = {
-    healthPoints: 15,
-    damage: 40,
-  },
-  cruisersOne = {
-    healthPoints: 60,
-    damage: 8,
-  },
-  cruisersTwo = {
-    healthPoints: 60,
-    damage: 8,
-  },
-  cruisersThree = {
+  cruisers = {
     healthPoints: 60,
     damage: 8,
   },
 ];
-
-const secondFleetOfShips = [
-  destroyersOne = {
-    healthPoints: 45,
-    damage: 10,
-  },
-  destroyersTwo = {
-    healthPoints: 45,
-    damage: 10,
-  },
-  destroyersThree = {
-    healthPoints: 45,
-    damage: 10,
-  },
-  battleshipsOne = {
-    healthPoints: 100,
-    damage: 4,
-  },
-  battleshipsTwo = {
-    healthPoints: 100,
-    damage: 4,
-  },
-  aircraftСarriersOne = {
-    healthPoints: 15,
-    damage: 40,
-  },
-  aircraftСarriersTwo = {
-    healthPoints: 15,
-    damage: 40,
-  },
-  cruisersOne = {
-    healthPoints: 60,
-    damage: 8,
-  },
-  cruisersTwo = {
-    healthPoints: 60,
-    damage: 8,
-  },
-  cruisersThree = {
-    healthPoints: 60,
-    damage: 8,
-  },
-];
-
-let randOne;
-let randTwo;
+const fleetOne = [TypeOfShips[0],TypeOfShips[0],TypeOfShips[0],TypeOfShips[1],TypeOfShips[1],TypeOfShips[2],TypeOfShips[2],TypeOfShips[3],TypeOfShips[3],TypeOfShips[3]];
+const fleetTwo = [TypeOfShips[2],TypeOfShips[0],TypeOfShips[1],TypeOfShips[3],TypeOfShips[1],TypeOfShips[2],TypeOfShips[2],TypeOfShips[0],TypeOfShips[3],TypeOfShips[0]];
 
 battleTwo.addEventListener('click', () => {
-  randOne = Math.floor(Math.random() * firstFleetOfShips.length);
-  randTwo = Math.floor(Math.random() * secondFleetOfShips.length);
- 
-  while((firstFleetOfShips[randOne].healthPoints > 4) && (secondFleetOfShips[randTwo].healthPoints > 4)) {
+  randOne = Math.floor(Math.random() * fleetOne.length);
+  randTwo = Math.floor(Math.random() * fleetTwo.length);
+
+  while((fleetOne[randOne].healthPoints > 4) && (fleetTwo[randTwo].healthPoints > 4)) {
     round += 1;
-    if(secondFleetOfShips[randTwo].healthPoints === 0 || secondFleetOfShips[randTwo].healthPoints < 0) {
-      delete secondFleetOfShips[randTwo];
-    }else if(firstFleetOfShips[randOne].healthPoints === 0 || firstFleetOfShips[randOne].healthPoints < 0) {
-      delete firstFleetOfShips[randOne];
+    if(fleetTwo[randTwo].healthPoints === 0 || fleetTwo[randTwo].healthPoints < 0) {
+      delete fleetTwo[randTwo];
+    }else if(fleetOne[randOne].healthPoints === 0 || fleetOne[randOne].healthPoints < 0) {
+      delete fleetOne[randOne];
     }
-      firstFleetOfShips[randOne].healthPoints -= secondFleetOfShips[randTwo].damage;
-      secondFleetOfShips[randTwo].healthPoints -= firstFleetOfShips[randOne].damage;
-      console.log("~Round-"+ round +" secondFleetOfShips(HP) " + secondFleetOfShips[randTwo].healthPoints,
-      "firstFleetOfShips(HP) " + firstFleetOfShips[randOne].healthPoints)
+    fleetOne[randOne].healthPoints -= fleetTwo[randTwo].damage;
+    fleetTwo[randTwo].healthPoints -= fleetOne[randOne].damage;
+      console.log("~Round-"+ round +" fleetTwo(HP) " + fleetTwo[randTwo].healthPoints,
+      "fleetOne(HP) " + fleetOne[randOne].healthPoints)
   } 
 });
