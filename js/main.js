@@ -1,73 +1,33 @@
-/*********** 1 -level **********/
+const Chess = () => {
+    let mainBlock = document.querySelector('.main');
+    let block;
+    let flag = true;
 
-const battleOne = document.querySelector('.battle_one');
-let round = 0;
+    let figure = {
+        0 : ['&#9814;', '&#9816;', '&#9815;', '&#9812;', '&#9813;','&#9815;', '&#9816;','&#9814;'],
+        1 : ['&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;','&#9817;', '&#9817;','&#9817;'],
+        6 : ['&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;','&#9823;', '&#9823;','&#9823;'],
+        7 : ['&#9820;', '&#9822;', '&#9821;', '&#9819;', '&#9818;','&#9821;', '&#9822;','&#9820;'],
+    };
 
-const firstShip = {
-  healthPoints: 100,
-  damage: 4,
-};
-const secondShip = {
-  healthPoints: 40,
-  damage: 15,
-};
+    for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
+            if (j  == 0){
+                flag = !flag;
+            }; 
+            block = document.createElement('div');
 
-battleOne.addEventListener('click', () => {
-  if ((secondShip.healthPoints > 4) && (firstShip.healthPoints > 15)) {
-    round += 1;
-    secondShip.healthPoints -= firstShip.damage;
-    firstShip.healthPoints -= secondShip.damage;
-    console.log("~Round-"+ round +" secondShip(HP) " + secondShip.healthPoints, "firstShip(HP) " + firstShip.healthPoints)
-  } else if(secondShip.healthPoints < 4) {
-    console.log('Победил firstShip!');
-  } else if(firstShip.healthPoints < 15) {
-    console.log('Победил secondShip!');
-  }
-});
+            if (flag) block.className = 'block black';
+            else block.className = 'block white';
 
-/*********** 2 -level **********/
+            if (figure[i] !== undefined && figure[i][j] !== undefined) {
+                block.innerHTML = figure[i][j];
+            }
 
-const battleTwo = document.querySelector('.battle_two');
-
-const TypeOfShips = [
-  destroyers = {
-    healthPoints: 45,
-    damage: 10,
-  },
-  battleships = {
-    healthPoints: 100,
-    damage: 4,
-  },
-  aircraftСarriers = {
-    healthPoints: 15,
-    damage: 40,
-  },
-  cruisers = {
-    healthPoints: 60,
-    damage: 8,
-  },
-];
-const fleetOne = [TypeOfShips[0],TypeOfShips[0],TypeOfShips[0],TypeOfShips[1],TypeOfShips[1],TypeOfShips[2],TypeOfShips[2],TypeOfShips[3],TypeOfShips[3],TypeOfShips[3]];
-const fleetTwo = [TypeOfShips[2],TypeOfShips[0],TypeOfShips[1],TypeOfShips[3],TypeOfShips[1],TypeOfShips[2],TypeOfShips[2],TypeOfShips[0],TypeOfShips[3],TypeOfShips[0]];
-
-let randOne = null;
-let randTwo = null;
-
-battleTwo.addEventListener('click', () => {
-  randOne = Math.floor(Math.random() * fleetOne.length);
-  randTwo = Math.floor(Math.random() * fleetTwo.length);
-
-  while((fleetOne[randOne].healthPoints > 4) && (fleetTwo[randTwo].healthPoints > 4)) {
-    round += 1;
-    if(fleetTwo[randTwo].healthPoints === 0 || fleetTwo[randTwo].healthPoints < 0) {
-      delete fleetTwo[randTwo];
-    }else if(fleetOne[randOne].healthPoints === 0 || fleetOne[randOne].healthPoints < 0) {
-      delete fleetOne[randOne];
+            mainBlock.appendChild(block);
+            flag = !flag;
+        }
     }
+}
 
-    fleetOne[randOne].healthPoints -= fleetTwo[randTwo].damage;
-    fleetTwo[randTwo].healthPoints -= fleetOne[randOne].damage;
-      console.log("~Round-"+ round +" fleetTwo(HP) " + fleetTwo[randTwo].healthPoints,
-      "fleetOne(HP) " + fleetOne[randOne].healthPoints);
-  } 
-});
+Chess();
