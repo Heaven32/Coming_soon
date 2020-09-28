@@ -13,6 +13,9 @@
     align-items: center;
     font-size: 40px;
 }
+.block:nth-child(-n+18) {
+    color: gainsboro;
+}
 .black {
     background: #795548;
 }
