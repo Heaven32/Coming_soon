@@ -4,7 +4,7 @@ let box = document.querySelector('.box');
 let contrl = document.querySelector('input[type=checkbox]');
 let paravozik = document.getElementById('paravozik');
 let temp = 0;
-let timerId
+let timerId = '';
 
 contrl.addEventListener('click', (event) => {
     if (event.target.type === 'checkbox') {
@@ -36,26 +36,13 @@ btnRight.addEventListener('mouseup', () => {
 document.addEventListener('keydown', (event) => {
     if(event.code === 'KeyF') {
         box.classList.toggle('light');
-    }
+    };
     if(event.code === 'ArrowLeft') {
-        timerId = setInterval(() => {
-            temp = temp - 0.3;
-            paravozik.style.left = temp + 'px';
-            console.log()
-        });
-    } 
-    if(event.code === 'ArrowRight') {
-        timerId = setInterval(() => {
-            temp = temp + 0.3;
-            paravozik.style.left = temp + 'px';
-        });
+        temp = temp - 5;
+        paravozik.style.left = temp + 'px';
+    }else if(event.code === 'ArrowRight') {
+        temp = temp + 5;
+        paravozik.style.left = temp + 'px';
     };
 });
 
-document.addEventListener('keyup', (event) => {
-    if(event.code === 'ArrowLeft') {
-        clearInterval(timerId)
-    } else if(event.code === 'ArrowRight') {
-        clearInterval(timerId)
-    };
-});
