@@ -10,22 +10,22 @@ contrl.addEventListener('click', (event) => {
       box.classList.toggle('light');
     };
   });
-btnLeft.addEventListener('click', () => {
-    temp = temp - 10;
+btnLeft.addEventListener('mousedown', () => {
+    temp = temp - 2;
     paravozik.style.left = temp + 'px';
 });
 
-btnRight.addEventListener('click', () => {
-    temp = temp + 10;
+btnRight.addEventListener('mousedown', () => {
+    temp = temp + 2;
     paravozik.style.left = temp + 'px';
 });
 
 document.addEventListener('keydown', (event) => {
     if(event.code === 'ArrowLeft') {
-        temp = temp - 10;
+        temp = temp - 2;
         paravozik.style.left = temp + 'px';
     } else if(event.code === 'ArrowRight') {
-        temp = temp + 10;
+        temp = temp + 2;
         paravozik.style.left = temp + 'px';
     };
 });
