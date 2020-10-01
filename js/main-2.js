@@ -13,7 +13,7 @@ contrl.addEventListener('click', (event) => {
   });
 btnLeft.addEventListener('mousedown', () => {
     timerId = setInterval(() => {
-        temp = temp - 1;
+        temp = temp - 0.8;
         paravozik.style.left = temp + 'px';
     });
 });
@@ -24,7 +24,7 @@ btnLeft.addEventListener('mouseup', () => {
     
 btnRight.addEventListener('mousedown', () => {
     timerId = setInterval(() => {
-        temp = temp + 1;
+        temp = temp + 0.8;
         paravozik.style.left = temp + 'px';
     });
 });
@@ -38,10 +38,24 @@ document.addEventListener('keydown', (event) => {
         box.classList.toggle('light');
     }
     if(event.code === 'ArrowLeft') {
-        temp = temp - 2;
-        paravozik.style.left = temp + 'px';
+        timerId = setInterval(() => {
+            temp = temp - 0.3;
+            paravozik.style.left = temp + 'px';
+            console.log()
+        });
+    } 
+    if(event.code === 'ArrowRight') {
+        timerId = setInterval(() => {
+            temp = temp + 0.3;
+            paravozik.style.left = temp + 'px';
+        });
+    };
+});
+
+document.addEventListener('keyup', (event) => {
+    if(event.code === 'ArrowLeft') {
+        clearInterval(timerId)
     } else if(event.code === 'ArrowRight') {
-        temp = temp + 2;
-        paravozik.style.left = temp + 'px';
+        clearInterval(timerId)
     };
 });

@@ -9,6 +9,7 @@ img {
 }
 body {
     overflow: hidden;
+    position: relative;
 }
 .light {
     border-top: 10px solid white;
