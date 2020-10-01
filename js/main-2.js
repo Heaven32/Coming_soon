@@ -34,6 +34,9 @@ btnRight.addEventListener('mouseup', () => {
 });
 
 document.addEventListener('keydown', (event) => {
+    if(event.code === 'KeyF') {
+        box.classList.toggle('light');
+    }
     if(event.code === 'ArrowLeft') {
         temp = temp - 2;
         paravozik.style.left = temp + 'px';

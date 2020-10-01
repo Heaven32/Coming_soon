@@ -4,8 +4,8 @@
     width: fit-content;
 }
 img {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 body {
     overflow: hidden;
@@ -29,14 +29,14 @@ body {
 .left {
     width: 0; 
     height: 0;
-    border-top: 20px solid white;
-    border-right: 50px solid red;
-    border-bottom: 20px solid white;
+    border-top: 30px solid white;
+    border-right: 60px solid red;
+    border-bottom: 30px solid white;
     margin-right: 10px;
 }
 .right {
-    border-top: 20px solid white;
-    border-left: 50px solid red;
-    border-bottom: 20px solid white;
+    border-top: 30px solid white;
+    border-left: 60px solid red;
+    border-bottom: 30px solid white;
     margin-left: 10px;
 }
