@@ -7,13 +7,13 @@ let sumHours = '';
 let different;
 let numb = '23:59';
 
-btn.addEventListener('click',() => {
+const startUp = (event) => {
     start.style.display = 'none';
     let valInput = timeControl.value;
     let temp = new Date();
     let temp1 = `${temp.getHours()}:${temp.getMinutes()}`;
     let getDate = (string) => new Date(0,0,0, string.split(':')[0], string.split(':')[1]);
-    if(getDate(valInput) < getDate(temp1)){
+    if(getDate(valInput) < getDate(temp1)) {
         let nowHours = (Number(valInput[0] + valInput[1])*60*60)*1000;
         let nowMinutes = (Number(valInput[3] + valInput[4])*60)*1000;
         let now = nowHours + nowMinutes + 60000;
@@ -42,4 +42,7 @@ btn.addEventListener('click',() => {
         };
       });
     icon.style.display = 'inline-block';
-});
+    event.target.removeEventListener("click", startUp); 
+};
+
+btn.addEventListener('click', startUp);
