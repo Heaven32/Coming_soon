@@ -1,12 +1,13 @@
 .box {
     height: 50px;
     width: 50px;
-    display: inline-block;
     border: 1px solid;
 }
 .main {
     width: 260px;
     margin: 0 auto;
+    display: flex;
+    flex-flow: wrap;
 }
 .status {
     text-align: center;

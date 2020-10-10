@@ -1,29 +1,27 @@
+const strStatus = document.createElement('div');
+const body = document.querySelector('body');
 let mas = [];
 
 // функцию очистки массива
 const clearMas = mas.map((num) => {
-    return num = null;
-})
-console.log(clearMas)
+    num = null;
+    return num
+});
 
 // функцию подсчета ненулевых(непустых) клеток во всём массиве
-const mas1 = [1, 45, 35, 22, 1, 1]
-const findMas = mas1.filter((item) => {
-    if(item === ''){
-        return item
-    }
-})
-console.log(findMas.length)
+const findMas = mas.reduce((item,i) => {
+   if(i !== ' ') {
+       item += 1
+   }
+   return item
+},0);
 
-const strStatus = document.createElement('div');
-const body = document.querySelector('body');
+// строка статуса, в которой будет написано количество ненулевых клеток
 strStatus.classList.add('status');
 body.prepend(strStatus);
+strStatus.innerHTML = `Количество ненулевых клеток ${findMas}`;
 
-// строку статуса, в которой будет написано количество ненулевых клеток
-strStatus.innerHTML = `Количество ненулевых клеток ${findMas.length}`;
-
-// отобрази на странице игровое поле(клетки массива)
+// отображение на странице игрового поля(клетки массива)
 const createBlock = () => {
     let mainBlock = document.querySelector('.main');
     let block;
