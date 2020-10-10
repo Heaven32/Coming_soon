@@ -45,3 +45,15 @@ const createBlock = () => {
     }
 }
 createBlock();
+
+// 6) сделай управление мышкой и клавиатурой, там где находится курсор
+const box = document.querySelectorAll('.box');
+
+const findCoursor = box.forEach((i) => {
+    i.addEventListener('mouseover', (event) => {
+        event.target.classList.add('color');
+        event.relatedTarget.classList.remove('color');
+    }); 
+});
+
+
