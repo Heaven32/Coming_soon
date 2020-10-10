@@ -1,15 +1,19 @@
 .box {
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     border: 1px solid;
 }
 .main {
-    width: 260px;
+    width: 160px;
     margin: 0 auto;
     display: flex;
     flex-flow: wrap;
 }
 .status {
     text-align: center;
-    margin: 20px;
+    margin: 10px;
+}
+.button {
+    text-align: center;
+    margin-top: 10px;
 }

@@ -12,6 +12,7 @@ const doubleMas = () => {
     }
 }
 
+
 // 2) напиши функцию очистки массива, заполнить null
 const clearMas = mas.map((num) => {
     num = null;
