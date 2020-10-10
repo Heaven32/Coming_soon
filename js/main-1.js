@@ -2,13 +2,23 @@ const strStatus = document.createElement('div');
 const body = document.querySelector('body');
 let mas = [];
 
-// функцию очистки массива
+// 1) Сгенерируй 2м массив, константа сторона поля, например, равна 5.
+const doubleMas = () => {
+    for (let i = 0; i < 5; i++) {
+        mas[i] = [];
+        for (let j = 0; j < 5; j++) {
+            mas[i][j] = 0;
+        }
+    }
+}
+
+// 2) напиши функцию очистки массива, заполнить null
 const clearMas = mas.map((num) => {
     num = null;
     return num
 });
 
-// функцию подсчета ненулевых(непустых) клеток во всём массиве
+// 3) напиши функцию подсчета ненулевых(непустых) клеток во всём массиве
 const findMas = mas.reduce((item,i) => {
    if(i !== ' ') {
        item += 1
@@ -16,12 +26,12 @@ const findMas = mas.reduce((item,i) => {
    return item
 },0);
 
-// строка статуса, в которой будет написано количество ненулевых клеток
+// строка статуса, в которой будет написано количество ненулевых клеток.
 strStatus.classList.add('status');
 body.prepend(strStatus);
 strStatus.innerHTML = `Количество ненулевых клеток ${findMas}`;
 
-// отображение на странице игрового поля(клетки массива)
+// 4) отобрази на странице игровое поле(клетки массива)
 const createBlock = () => {
     let mainBlock = document.querySelector('.main');
     let block;
