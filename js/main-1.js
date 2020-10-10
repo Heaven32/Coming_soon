@@ -11,13 +11,14 @@ const doubleMas = () => {
         }
     }
 }
+doubleMas()
 
 // 2) напиши функцию очистки массива, заполнить null
 
-const clearMas = mas.map((num) => {
-    num = null;
-    return num
-});
+// const clearMas = mas.map((num) => {
+//     num = null;
+//     return num
+// });
 
 // 3) напиши функцию подсчета ненулевых(непустых) клеток во всём массиве
 const findMas = mas.reduce((item,i) => {
@@ -34,17 +35,15 @@ strStatus.innerHTML = `Количество ненулевых клеток ${fi
 
 // 4) отобрази на странице игровое поле(клетки массива)
 let mainBlock = document.querySelector('.main');
-const createBlock = () => {
-    let block;
-    for (let i = 0; i < 5; i++) {
-        for (let j = 0; j < 5; j++) {
-            block = document.createElement('div');
+
+const createBlock = mas.forEach((i) => {
+    i.forEach((x) => {
+        block = document.createElement('div');
             mainBlock.appendChild(block);
             block.classList.add('box');
-        }
-    }
-}
-createBlock();
+    })           
+})
+
 // 6) сделай управление мышкой и клавиатурой, там где находится курсор
 const box = document.querySelectorAll('.box');
 // const findCoursor = box.forEach((i) => {
