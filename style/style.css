@@ -1,4 +1,4 @@
-.box-1, .box-2, .box-0 {
+/* .box-1, .box-2, .box-0 {
     height: 50px;
     width: 50px;
     border: 1px solid;
@@ -22,4 +22,11 @@
 }
 .box-2 {
     background-color: rgba(248, 148, 6, 1);
+} */
+
+.visible {
+        display: inline-block;
+}
+.text {
+
 }
