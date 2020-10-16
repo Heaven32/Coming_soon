@@ -1,32 +1,13 @@
-/* .box-1, .box-2, .box-0 {
-    height: 50px;
-    width: 50px;
-    border: 1px solid;
-}
 .main {
-    width: 260px;
-    margin: 0 auto;
     display: flex;
+    width: 400px;
+    margin: 0 auto;
     flex-flow: wrap;
 }
-.status {
-    text-align: center;
+.parking_place {
+    border: 1px solid black;
     margin: 10px;
 }
-.button {
+.current_time {
     text-align: center;
-    margin-top: 10px;
-}
-.box-1 {
-    background-color: blue;
-}
-.box-2 {
-    background-color: rgba(248, 148, 6, 1);
-} */
-
-.visible {
-        display: inline-block;
-}
-.text {
-
 }
