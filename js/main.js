@@ -1,29 +1,40 @@
 const cartEl = document.querySelector('.cart');
 const gameBoard = document.querySelector('.game-board');
-const mainBlock = document.querySelector('.main');
 const count = 10;
-let arr = [];
+const cart = [];
 
-// Сгенерировал 30 карт 
+// массив со случайным набором чисел
+const arrCart = [];
+const quantityCart = 30;
+for (let i = 0; i < quantityCart; i++) {
+    arrCart.push(Math.round(Math.random() * quantityCart))
+}
+console.log(arrCart)
+
+// переменные с типом карт
+const CartOne = `<div class='corner'>
+                    <img src="./image/corner.png" alt="">
+                </div>`;
+const CartTwo = `<div class='impasse'>
+                    <img src="./image/impasse.png" alt="">
+                </div>`;
+const CartThree = `<div class='stick'>
+                        <img src="./image/stick.png" alt="">
+                </div>`;
+
+// Сгенерировать 30 карт 
 const generateCart = (cartArr) => {
     for(let i = 1; i <= count; i++) {
-        cartEl.innerHTML += `<div class='corner'>
-                                    <img src="./image/corner.png" alt="">
-                                </div>
-                                <div class='impasse'>
-                                <img src="./image/impasse.png" alt="">
-                                </div>
-                                <div class='stick'>
-                                    <img src="./image/stick.png" alt="">
-                            </div>`  
+        cartEl.innerHTML
     };
     return cartArr;
 };
-generateCart();
-
+generateCart(cart);
+console.log(generateCart(cart))
 
 // Отрисовка игрового поля
 let fieldsNumb = 8;
+const arr = [];
 const doubleMas = (item) => {
     for (let i = 0; i < fieldsNumb; i++) {
         arr[i] = [];
