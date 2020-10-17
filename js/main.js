@@ -19,7 +19,7 @@ const generateCart = (cartArr) => {
     };
     return cartArr;
 };
-generateCart(cart);
+generateCart();
 
 
 // Отрисовка игрового поля
