@@ -1,13 +1,16 @@
-.main {
-    display: flex;
-    width: 400px;
-    margin: 0 auto;
-    flex-flow: wrap;
+.cart div {
+    position: absolute;
+    left: 5%;
+    top: 5%;
 }
-.parking_place {
+.box {
+    height: 62px;
+    width: 62px;
     border: 1px solid black;
-    margin: 10px;
 }
-.current_time {
-    text-align: center;
+.game-board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 515px;
+    margin: 0 auto;
 }
