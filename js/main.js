@@ -52,7 +52,6 @@ let angle = 0;
 // Клик по игровому полю
 const boxAll = document.querySelectorAll('.box');
 function clickBoardGame () { 
-    cardEl.innerHTML = arrCard[1].adress;
     if (this.textContent === ' '){
         this.innerHTML = arrCard[0].adress;
         arrCard.shift()
@@ -61,6 +60,7 @@ function clickBoardGame () {
         this.style.transform = `rotate(${angle}deg)`
     }
     balanceCards.innerHTML = `Осталось ${arrCard.length} карт`
+    cardEl.innerHTML = arrCard[0].adress;
 };
 
 const addListeners = () => {
