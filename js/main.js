@@ -20,17 +20,17 @@ borderFunc(itemOne, 3453, (elem) => {
     borderFunc(itemTwo, 2563, () => {
         itemOne.innerHTML = 'btn';
         itemOne.addEventListener('click', () => {
-            boxOne.classList.add('border1')
+            boxOne.classList.toggle('border1')
         })
         borderFunc(itemThree, 2163, () => {
             itemTwo.innerHTML = 'btn';
             itemTwo.addEventListener('click', () => {
-                boxTwo.classList.add('border1')
+                boxTwo.classList.toggle('border1')
             })
             borderFunc(itemThree, 1498, () => {
                 itemThree.innerHTML = 'btn';
                 itemThree.addEventListener('click', () => {
-                    boxThree.classList.add('border1')
+                    boxThree.classList.toggle('border1')
                 })
             })
         })
