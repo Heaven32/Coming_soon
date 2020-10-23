@@ -11,22 +11,30 @@ const borderFunc = (el, time, callback) => {
     setTimeout(() => {
         el.classList.add('border')
         el.style.height = '100px';
-        el.innerHTML = 'btn';
+        
         if (callback) callback();
     }, time);
 };
 
 borderFunc(itemOne, 3453, (elem) => {
-    itemOne.addEventListener('click', () => {
-        boxOne.classList.add('border')
-    })
     borderFunc(itemTwo, 2563, () => {
-        itemTwo.addEventListener('click', () => {
-            boxTwo.classList.add('border')
-        }) 
-        borderFunc(itemThree, 1498, false)
-        itemThree.addEventListener('click', () => {
-            boxThree.classList.add('border')
+        itemOne.innerHTML = 'btn';
+        itemOne.addEventListener('click', () => {
+            boxOne.classList.add('border')
         })
+        borderFunc(itemThree, 2163, () => {
+            itemTwo.innerHTML = 'btn';
+            itemTwo.addEventListener('click', () => {
+                boxTwo.classList.add('border')
+            })
+            borderFunc(itemThree, 1498, () => {
+                itemThree.innerHTML = 'btn';
+                itemThree.addEventListener('click', () => {
+                    boxThree.classList.add('border')
+                })
+            })
+        })
+        
     })
+    
 });
