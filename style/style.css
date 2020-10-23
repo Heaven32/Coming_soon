@@ -1,23 +1,24 @@
-.box {
-    height: 62px;
-    width: 62px;
-    border: 1px solid black;
+ body {
+     display: flex;
+ }
+.border {
+    border-top: 2px solid red;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
 }
-.game-board {
-    display: flex;
-    flex-wrap: wrap;
-    width: 515px;
-    margin: 0 auto;
-}
-.box-card {
-    width: fit-content;
+.item{
+    height: 0px;
+    width: 200px;
+    margin: 10px;
+    transition: 2s;
     text-align: center;
-    margin: 20px;
-    display: inline-block
+    font-size: 25px;
 }
-.card {
-    border: 2px solid white;
-    width: fit-content;
-    box-shadow: 0.4em -0.4em 5px rgba(122,122,122,0.5);
-    margin: 0 auto;
+.box {
+    width: 400px;
+    height: 100px;
+    margin: 10px;
 }
+
+

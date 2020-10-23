@@ -1,70 +1,32 @@
-const cardEl = document.querySelector('.card');
-const balanceCards =document.querySelector('.balance_cards');
-const gameBoard = document.querySelector('.game-board');
+const itemOne = document.querySelector('.item-1');
+const itemTwo = document.querySelector('.item-2');
+const itemThree = document.querySelector('.item-3');
 
-const count = 10;
-const card = [];
+const boxOne = document.querySelector('.box-1');
+const boxTwo = document.querySelector('.box-2');
+const boxThree = document.querySelector('.box-3');
 
-// Обьект с типом карт
-const cardTypes  = [ 
-    {name: "CardOne", type: 1, adress: `<img src="./image/corner.png" alt="">`},
-    {name: "CardTwo", type: 2, adress: `<img src="./image/impasse.png" alt="">`},
-    {name: "CardThree", type: 3, adress: `<img src="./image/stick.png" alt="">`},
-];
 
-// массив со случайным набором чисел
-const arrCard = [];
-const quantityCard = 30;
-for (let i = 0; i < quantityCard; i++) {
-    arrCard.push(cardTypes[Math.floor(Math.random() * Math.floor(3))]);
-}
-
-// Отрисовка игрового поля
-let fieldsNumb = 8;
-const arr = [];
-const doubleMas = (item) => {
-    for (let i = 0; i < fieldsNumb; i++) {
-        arr[i] = [];
-        for (let j = 0; j < fieldsNumb; j++) {
-            arr[i][j] = null;
-        }
-    }
-}
-doubleMas();
-
-const createBlock = () => {
-    arr.forEach(i => {
-        i.forEach(x => {
-            gameBoard.innerHTML += `<div class='box'> </div>`  
-            });       
-    }); 
-};
-createBlock();
-
-// колличество оставшихся карт в колоде
-balanceCards.innerHTML = `Осталось ${arrCard.length} карт`
-
-// Отрисовка одной карты из всей колоды
-cardEl.innerHTML = arrCard[0].adress;
-
-// переменная для сохранения угла градуса картинки
-let angle = 0;
-// Клик по игровому полю
-const boxAll = document.querySelectorAll('.box');
-function clickBoardGame () { 
-    if (this.textContent === ' '){
-        this.innerHTML = arrCard[0].adress;
-        arrCard.shift()
-    }else {
-        angle += 90;
-        this.style.transform = `rotate(${angle}deg)`
-    }
-    balanceCards.innerHTML = `Осталось ${arrCard.length} карт`
-    cardEl.innerHTML = arrCard[0].adress;
+const borderFunc = (el, time, callback) => {
+    setTimeout(() => {
+        el.classList.add('border')
+        el.style.height = '100px';
+        el.innerHTML = 'btn';
+        if (callback) callback();
+    }, time);
 };
 
-const addListeners = () => {
-    boxAll.forEach(elem => elem.addEventListener('click', clickBoardGame))
-   
-};
-addListeners();
+borderFunc(itemOne, 3453, (elem) => {
+    itemOne.addEventListener('click', () => {
+        boxOne.classList.add('border')
+    })
+    borderFunc(itemTwo, 2563, () => {
+        itemTwo.addEventListener('click', () => {
+            boxTwo.classList.add('border')
+        }) 
+        borderFunc(itemThree, 1498, false)
+        itemThree.addEventListener('click', () => {
+            boxThree.classList.add('border')
+        })
+    })
+});
