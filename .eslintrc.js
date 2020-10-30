@@ -7,6 +7,9 @@ module.exports = {
     es6: true,
     node: true,
   },
+  globals: {
+    "globalThis": false,
+  },
   extends: [
     'eslint:recommended',
     'airbnb',
@@ -68,7 +71,7 @@ module.exports = {
       'off',
     ],
     'no-plusplus': [
-       2, { allowForLoopAfterthoughts: true }
-    ]
+      2, { allowForLoopAfterthoughts: true }
+    ],
   },
 };
