@@ -1,42 +1,102 @@
-// 1) создаём 2 папки, в одну папку кладём картинку,  например SVG-файл. Эту картинку перемещаем из одной папки в другую.
-const fs = require('fs').promises;
-
-async function moveFile(source, destination) {
-  try {
-    await fs.rename(source, destination);
-    console.log(`Moved file from ${source} to ${destination}`);
-  } catch (error) {
-    console.error(`Got an error trying to move the file: ${error.message}`);
-  }
-}
-
-moveFile('folder_first/images.jpg','folder_second/images.jpg');
-
-// 2) из прошлой домашки делаем request на dou.ua, добываем массив картинок, сохраняем его в файл arr.txt.
 const request = require('request');
+const cheerio = require('cheerio');
+const fs = require('fs');
+const http = require('http');
 
-request('https://www.dou.ua/', (error, response, body) => {
-    let str = body.match(/<img[^>]+src="http([^">]+)"/g).slice(46, 52);
-    let adress = str.map(i => {
-      return i.match(/http([^">]+)/g)
-    })
-    let arr = adress.flat();
+const URL = 'https://auto.ria.com/uk/search/?category_id=1&marka_id=2233&model_id=0&city%5B0%5D=0&state%5B0%5D=0&s_yers%5B0%5D=0&po_yers%5B0%5D=0&price_ot=&price_do=';
+const arr = [];
+const PORT = 3000;
 
-    if(error) {
-                console.log(error);
+// 1) Парсер теслы;
+const teslaPars = () => {
+  request(URL, (error, response, body) => {
+    if (!error) {
+      const $ = cheerio.load(body);
+      const carArr = [];
+      const addressArr = [];
+      const usdArr = [];
+      const uahArr = [];
+      $('.blue.bold').text((index, text) => carArr.push(text));
+      $('.address').text((index, text) => addressArr.push(text.slice(3, -1)));
+      const address = addressArr.map((i) => {
+        const temp = Number(i.replace(/\s/g, ''));
+        return temp;
+      });
+      $('[data-currency="USD"]').text((index, text) => usdArr.push(text));
+      const usdA = usdArr.map((i) => {
+        const temp = Number(i.replace(/\s/g, ''));
+        return temp;
+      });
+      $('[data-currency="UAH"]').text((index, text) => uahArr.push(text));
+      const uahA = uahArr.map((i) => {
+        const temp = Number(i.replace(/\s/g, ''));
+        return temp;
+      });
+      carArr.forEach((i, index) => {
+        arr.push({
+          model: i,
+          years: address[index],
+          USD: usdA[index],
+          UAH: uahA[index],
+        });
+      });
+      const formArr = formationCSV(arr);
+      funcCSV('tesla', timeNow, formArr);
+      buildTable(arr);
     } else {
-        fs.writeFile('arr.txt', arr, (err) => {});
-        
+      console.log(`Got an error: ${error}`);
     }
+  });
+};
+
+teslaPars();
+// 2) Написать функцию, которая генерирует текущую дату в формате строки 'YYYYMMDD-HHmmSS';
+const Times = () => {
+  const d = new Date();
+  const date = d.toISOString().split('T')[0].replace(/-/g, '');
+  const time = d.toTimeString().split(' ')[0].replace(/:/g, '');
+  return `${date}-${time}`;
+};
+const timeNow = Times();
+
+// 3) Написать функцию формирования CSV файла из массива, разделитель точка с запятой (";"), текст в двойных кавычках;
+const formationCSV = data => data.map(row => `"${row.model}";"${row.years}";"${row.USD}";"${row.UAH}"`).join('\n');
+
+// 4) Написать функцию сохранения файла CSV на диск;
+const funcCSV = (name, time, data) => {
+  try {
+    fs.writeFileSync(`${name}_${time}.csv`, data);
+  } catch (error) {
+    console.error(`Got an error: ${error.message}`);
+  }
+};
+
+// 5) Написать функцию формирования строки для вставки таблицы в html, теги <table></table>;
+const buildTable = (data) => {
+  let table = '';
+  data.forEach((x) => {
+    const row = `<tr>
+              <td>${x.model}</td>
+              <td>${x.years}</td>
+              <td>${x.USD}</td>
+              <td>${x.UAH}</td>
+            </tr>`;
+    table += row;
+  });
+  return `<table>${table}</table>`;
+};
+
+http.createServer((req, res) => {
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  console.log('req.url:', req.url);
+  if (req.url === '/tesla') {
+    res.write('<a href="/tesla">обновить данные по Тесле</a>');
+    res.write(`${buildTable(arr)}`);
+    res.write(`<a href="${`tesla_${timeNow}.csv`}" download>${`tesla_${timeNow}.csv`}</a>`);
+  } else {
+    res.write('<a href="/tesla">обновить данные по Тесле</a>');
+  }
+  res.end();
+}).listen(PORT, () => {
+  console.log('server running');
 });
-
-// 3) запускаем сервер на встроенном https, выводим картинки из файла arr.txt.
-const http = require("http");
-
-http.createServer((request, response) => {
-  response.writeHead(200, {'Content-Type': 'text/plain'});
-  response.end('Hello World\n');
-}).listen(3000); 
-
-console.log('Server running on port 3000.');
- 
