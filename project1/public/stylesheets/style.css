@@ -1,0 +1,41 @@
+.circle {
+    width:20px;
+    height:20px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.wrap {
+  display: flex;
+  justify-content: center;
+}
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+.text-2 {
+ color: red; 
+}
+.text-3 {
+  color: purple;
+}
+.text-4 {
+  color: aqua;
+}
+.text-5 {
+  color: blue;
+}
+.text-6 {
+  color: yellow;
+}
+.text-7 {
+  color: green;  
+}
+.text-8 {
+  color: darkslateblue;
+}
