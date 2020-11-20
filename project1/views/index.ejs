@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test</title>
+    <title>Star Wars</title>
+    <link rel="icon" type="image/png" href="https://www.favicon.by/ico/5fb66e1194353.ico" />
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-      <div class="wrap">
-        <div class="text">
-          <%= str %>
-        </div>
-        <div class="pagination">
-        </div>
+    <div class="wrap">
+      <div class="field">
+        <%- field %>
       </div>
+      <div class="name-link">
+        <div><%- name %></div>
+        <div><%- films %></div>
+      </div>
+      <div class="table">
+        <div class="row-1"><%- title %></div> 
+        <div class="row-2"><%- release_date %></div> 
+      </div>
+    </div>
+    <script src="./javascripts/main.js"></script>
   </body>
 </html>
 

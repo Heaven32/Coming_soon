@@ -1,55 +1,55 @@
-const { text } = require('express');
-var express = require('express');
-var router = express.Router();
+const express = require('express');
 const axios = require('axios');
-//const texts = require('../models/db');
+const router = express.Router();
 
+const starwars = {
+  field: '',
+  name: '',
+  films: '',
+  title: '',
+  release_date: ''
+};
 
-// const page = {
-//   text:'',
-//   pagination:'',
-// };
+const field = () => {
+  return starwars.field = `<input type='text' class='inp' placeholder='ID people'>
+  <button type='button' id='btn'>OK</button>` 
+}
 
-// const func = (temp) => {
-//   page.pagination = '';
-//   texts.forEach((elem,index) => {
-//     const str1 = `<a href='${index+1}'>${index+1}</a>`;
-//     const str2= `<a href='${index+1}' class='none'>${index+1}</a>`;
-//     if(index == temp){
-//       page.pagination += (str2 - 1);
-//     } else {
-//       page.pagination += str1;
-//     }
-//     return page
-//   });
-// };
+router.get('/', (req, res) => {
+  field();
+  res.render('index', starwars);
+});
 
-// router.get('/', (req, res) => {
-//   page.text = texts[0];
-//   func(Number(req.params.id - 1));
-//   res.render('index', page);
-// });
-
-// router.get('/:id', (req, res) => {
-//   page.text = texts[Number(req.params.id) - 1];
-//   func(Number(req.params.id - 1));
-//   res.render('index', page);
-// });
-
-new Promise((resolve, reject) => {
-    axios.get('https://dog.ceo/api/breeds/image/random')
-    .then((responce) => {
-      let img = '';
-      img = responce.data;
-      console.log(img)
-      router.get('/', (req, res) => {
-        str = img.message;
-        console.log(str)
-          res.render('index', str);
-        str = '';
+router.get('/:id', (req, res) => {
+  field();
+  axios.get(`https://swapi.dev/api/people/${req.params.id}`)
+  .then((res1) => {
+    starwars.films = '';
+    starwars.name = res1.data.name;
+    const arr = res1.data.films;
+    arr.forEach(index => starwars.films +=`<a href='${index}'>${index}</a><br>`);
+    return arr;
+  }).then((res2) => {
+    const arr1 = res2.map(index => Number(index[index.length - 2]));
+    axios('https://swapi.dev/api/films/')
+    .then((res3) => {
+      starwars.release_date = '';
+      arr1.map(index => {
+        let arr = res3.data.results; 
+        return starwars.release_date += `<span>${arr[index - 1].release_date}</span><br>`
+      });
+      return arr1.map(index => {
+        let arr = res3.data.results; 
+        return arr[index - 1].title
       });
     })
-    .catch((err) => console.log('err axios:', err))
-}) 
+    .then((res4) => {
+      starwars.title = '';
+      res4.forEach(index => starwars.title += `<span>${index}</span><br>`);
+      res.render('index', starwars)
+    })
+   })
+   .catch((err) => { console.log('axios err', err)});
+});
 
 module.exports = router;

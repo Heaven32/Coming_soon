@@ -1,74 +1,22 @@
-const path = require('path');
-
 module.exports = {
-  env: {
-    browser: true,
-    commonjs: true,
-    es6: true,
-    node: true,
-  },
-  globals: {
-    "globalThis": false,
-  },
-  extends: [
-    'eslint:recommended',
-    'airbnb',
-  ],
-  settings: {
-    'import/resolver': {
-      node: {
-        paths: [ path.join(__dirname, 'src')],
-      },
+    "env": {
+        "browser": true,
+        "es2021": true
     },
-  },
-  parser: 'babel-eslint',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
     },
-    ecmaVersion: 7,
-    sourceType: 'module',
-  },
-  plugins: [
-    'react',
-  ],
-  rules: {
-    indent: [
-      'error',
-      2,
+    "plugins": [
+        "react"
     ],
-    'linebreak-style': [
-      'error',
-      'unix',
-    ],
-    quotes: [
-      'error',
-      'single',
-    ],
-    'no-console': [
-      'off',
-    ],
-    'max-len': [
-      'error',
-      {
-        code: 1500,
-        ignoreTrailingComments: true,
-      },
-    ],
-    'no-param-reassign': [
-      'error', 
-      { 
-        'props': false,
-      }
-    ],
-    'react/jsx-one-expression-per-line': [
-      'off',
-    ],
-    'jsx-a11y/click-events-have-key-events': [
-      'off',
-    ],
-    'jsx-a11y/no-static-element-interactions': [
-      'off',
-    ],
-  },
+    "rules": {
+    }
 };
