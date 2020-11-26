@@ -17,7 +17,7 @@ const listFilms = new Promise((res, rej) => {
     person.listFilms = '';
     let str = '<select class="list-films">'
     res2.map(el =>{
-      str = `${str}<option value="${el.episode_id}">${el.title}</option>`;
+      str = `${str}<option value="${el.episode_id}" selected>${el.title}</option>`;
     });
     person.listFilms = `${str}</select>`;
     res(str);
