@@ -8,12 +8,19 @@
   margin: 0 auto;
   width: fit-content;
 }
+.list-films {
+  margin: 10px;
+}
 .table {
   display: flex;
   justify-content: space-between;
   width: auto;
   margin-top: 20px;
 }
+table, td {
+  border: 1px solid black;
+}
+
 span {
   border: 1px solid black;
     display: -webkit-inline-box;
@@ -22,4 +29,9 @@ span {
 }
 .name-link, .field {
   text-align: center;
+}
+.preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }

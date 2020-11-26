@@ -1,9 +1,11 @@
-const btn = document.getElementById('btn');
-const field = document.querySelector('.inp');
 
-if(btn){
-    btn.addEventListener('click', () => {
-        document.location.replace(`/${field.value}`);
-    });
-}
+const list = document.querySelector('.list-films');
+const option = document.querySelectorAll('option')
+
+console.log('option')
+document.addEventListener('change', () => {
+    document.location.replace(`/${list.value}`);
+    
+    option.prop('selected',true);
+})
 
