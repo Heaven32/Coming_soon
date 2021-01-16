@@ -1,5 +1,17 @@
+/* eslint-disable react/jsx-no-undef */
 import React from 'react';
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    NavLink
+  } from "react-router-dom";
 import './style.css';
+import User_1 from "./User_1";
+import User_2 from "./User_2";
+import User_3 from "./User_3";
+
 
 const Users = () => {
     return (
@@ -10,33 +22,20 @@ const Users = () => {
                         <h2>Meet The Buther Block team</h2>
                 </div>
                 <div className="content">
-                    <div className="user-1">
-                        <div className="photo">
-                            <img src="./1-1.jpg" />
-                        </div>
-                        <div className="description">
-                            <h4>Kevin</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-                    <div className="user-2">
-                        <div className="photo">
-                            <img src="./2-2.jpg" />
-                        </div>
-                        <div className="description">
-                            <h4>Austin</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-                    <div className="user-3">
-                        <div className="photo">
-                            <img src="./3-2.jpg" />
-                        </div>
-                        <div className="description">
-                            <h4>Taylor</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
+
+                    <Router>
+                        <nav>
+                            <li><NavLink to="/users/" exact>User - 1</NavLink></li>
+                            <li><NavLink to="/users/user_2">User - 2</NavLink></li>
+                            <li><NavLink to="/users/user_3">User - 3</NavLink></li>
+                        </nav>
+                        <Switch>
+                            <Route exact path="/users/" component={User_1} />
+                            <Route  path="/users/user_2" component={User_2} />
+                            <Route  path="/users/user_3" component={User_3} />
+                        </Switch>
+                    </Router>
+
                 </div>
             </div>
         </div>
