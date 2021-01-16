@@ -16,6 +16,6 @@
 .title-block h3 {
     color: rgb(255 78 134);
 }
-nav .active {
+nav .selected {
     color: red;
 }
