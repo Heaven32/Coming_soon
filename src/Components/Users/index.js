@@ -25,7 +25,7 @@ const Users = () => {
 
                     <Router>
                         <nav>
-                            <li><NavLink to="/users/" exact>User - 1</NavLink></li>
+                            <li><NavLink to="/users/" activeClassName="selected" exact>User - 1</NavLink></li>
                             <li><NavLink to="/users/user_2">User - 2</NavLink></li>
                             <li><NavLink to="/users/user_3">User - 3</NavLink></li>
                         </nav>

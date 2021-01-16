@@ -1,16 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import './App.css';
+import './style.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import Users from "./Components/Users";
-import Home from "./Components/Home";
-import About from "./Components/About";
-import Menu from "./Components/Menu";
-import Contact from "./Components/Contact";
+import Users from "../Users";
+import Home from "../Home";
+import About from "../About";
+import Menu from "../Menu";
+import Contact from "../Contact";
 
 const App = () => {
   return (
