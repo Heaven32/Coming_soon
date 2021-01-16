@@ -5,13 +5,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Users from "./Users";
-import Home from "./Home";
-import About from "./About";
-import Menu from "./Menu";
-import Contact from "./Contact";
+import Users from "./Components/Users";
+import Home from "./Components/Home";
+import About from "./Components/About";
+import Menu from "./Components/Menu";
+import Contact from "./Components/Contact";
 
-function App() {
+const App = () => {
   return (
     <Router>
     <div className="main">
@@ -43,8 +43,6 @@ function App() {
         </div>
       </nav>
 
-      {/* A <Switch> looks through its children <Route>s and
-          renders the first one that matches the current URL. */}
       <Switch>
         <Route path="/contact">
           <Contact />

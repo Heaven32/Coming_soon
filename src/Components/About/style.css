@@ -1,0 +1,7 @@
+h4, h2, p {
+    color: white;
+}
+.row {
+    display: flex;
+    margin-top: 50px;
+}

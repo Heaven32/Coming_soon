@@ -1,0 +1,18 @@
+.content {
+    display: flex;
+}
+.photo img {
+    max-width: 350px;
+}
+.photo, .description, .title-block {
+    text-align: center;
+}
+.description p {
+    padding: 0 25px;
+}
+.wrapper {
+    margin-top: 50px;
+}
+.title-block h3 {
+    color: rgb(255 78 134);
+}

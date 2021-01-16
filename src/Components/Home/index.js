@@ -1,6 +1,7 @@
 import React from 'react';
+import './style.css';
 
-function Home() {
+const Home = () => {
     return (
         <div className="page-home">
             <h4 className="home-page-h4">Fort Scott’s premier butchery</h4>

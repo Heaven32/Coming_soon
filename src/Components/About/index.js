@@ -1,6 +1,7 @@
 import React from 'react';
+import './style.css';
 
-function About() {
+const About = () => {
     return (
         <div className="">
             <div className="container">
@@ -14,7 +15,9 @@ function About() {
                             <p>Whether you’re shopping on a budget for a family of 6, or looking for a unique addition to your date-night charcuterie board, we have what you’re looking for. We offer high-quality delicious meats and excellent customer service because we’re passionate about sending customers home happy and ready to eat.</p>
                         </div>
                     </div>
-                    <div className="row-two"></div>
+                    <div className="row-two">
+                        <img src="./3.jpg" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -22,11 +25,3 @@ function About() {
 }
 
 export default About;
-min-width: calc((100% - -105px)/2);
-background-color: #e9eae4;
-color: #9b9b94;
-border-radius: 4px;
-margin: 7px !important;
-font-size: 16px;
-text-align: center;
-[mittun_non_classy id="26925"]
