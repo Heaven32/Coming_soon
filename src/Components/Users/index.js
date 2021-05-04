@@ -1,31 +1,38 @@
 import React from 'react';
-import classes from './style.module.css'
+import classes from './style.module.css';
 import {connect} from "react-redux";
 import {followAC, setUsersAC, unfollowAC} from "../../Redux/users-reducer";
-import userPhoto from '../../assets/images/users.png'
+import userPhoto from '../../assets/images/users.png';
 import axios from "axios";
 
-const UsersFunction = (props) => {
+class UsersFunction extends React.Component {
 
-    if (props.users.length === 0) {
+    constructor(props) {
+        super(props);
+
         axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
-            props.setUsers(response.data.items);
+            this.props.setUsers(response.data.items);
         })
     }
 
-    return <div>
-        {props.users.map(u => <div key={u.id}>
+    render() {
+        return <div>
+            {this.props.users.map(u => <div key={u.id}>
             <span>
                 <div className={classes.usersImg}>
                     <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""/>
                 </div>
                 <div>
                     {u.followed
-                        ? <button onClick={() => { props.unfollow(u.id)}}>Unfollow</button>
-                        : <button onClick={() => { props.follow(u.id)}}>Follow</button>}
+                        ? <button onClick={() => {
+                            this.props.unfollow(u.id)
+                        }}>Unfollow</button>
+                        : <button onClick={() => {
+                            this.props.follow(u.id)
+                        }}>Follow</button>}
                 </div>
             </span>
-            <span>
+                <span>
                 <span>
                     <div>{u.name}</div>
                     <div>{u.status}</div>
@@ -34,8 +41,9 @@ const UsersFunction = (props) => {
                 <span>
                 </span>
             </span>
-        </div>)}
-    </div>
+            </div>)}
+        </div>
+    }
 }
 
 let mapStateToProps = (state) => {
