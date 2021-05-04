@@ -1,0 +1,10 @@
+.dialog img {
+    width: 40px;
+    border-radius: 50%;
+    height: 40px;
+}
+.dialog {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}

@@ -1,0 +1,10 @@
+.navigation {
+    grid-area: nav;
+    background-color: coral;
+}
+.link a {
+    color: white;
+}
+a.active {
+    color: gold;
+}

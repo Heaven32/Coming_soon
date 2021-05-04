@@ -1,0 +1,20 @@
+.wrapper {
+    display: grid;
+
+    grid-template-areas:
+    "head head"
+    "nav con";
+
+    grid-template-rows: 60px 1fr;
+    grid-auto-columns: 2fr 10fr;
+}
+.color {
+    color: purple;
+}
+.app_wrapper_content {
+    grid-area: con;
+    background-color: plum;
+    color: white;
+}
+
+
