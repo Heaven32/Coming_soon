@@ -5,7 +5,50 @@ import {followAC, setCurrentPageAC, setTotalUsersCountAC, setUsersAC, unfollowAC
 import userPhoto from '../../assets/images/users.png';
 import axios from "axios";
 
-class UsersFunction extends React.Component {
+const UsersComponent = (props) => {
+
+    let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
+    let pages = [];
+    for (let i = 1; i <= pageCount; i++) {
+        pages.push(i)
+    }
+
+    return <div>
+        <div className={classes.pagination}>
+            {pages.map(p => <span className={props.currentPage === p && classes.selectedPage}
+                                  onClick={(e) => {
+                                      props.onPageChanged(p)
+                                  }}>{p}</span>)}
+        </div>
+        {props.users.map(u => <div key={u.id}>
+            <span>
+                <div className={classes.usersImg}>
+                    <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""/>
+                </div>
+                <div>
+                    {u.followed
+                        ? <button onClick={() => {
+                            props.unfollow(u.id)
+                        }}>Unfollow</button>
+                        : <button onClick={() => {
+                            props.follow(u.id)
+                        }}>Follow</button>}
+                </div>
+            </span>
+            <span>
+                <span>
+                    <div>{u.name}</div>
+                    <div>{u.status}</div>
+                    <div>{u.id}</div>
+                </span>
+                <span>
+                </span>
+            </span>
+        </div>)}
+    </div>
+}
+
+class UsersAPI extends React.Component {
 
     componentDidMount() {
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
@@ -22,45 +65,15 @@ class UsersFunction extends React.Component {
     }
 
     render() {
-        let pageCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
-        let pages = [];
-        for (let i = 1; i <= pageCount; i++) {
-            pages.push(i)
-        }
+        return <UsersComponent totalUsersCount={this.props.totalUsersCount}
+                               pageSize={this.props.pageSize}
+                               currentPage={this.props.currentPage}
+                               onPageChanged={this.onPageChanged}
+                               users={this.props.users}
+                               unfollow={this.props.unfollow}
+                               follow={this.props.follow}
 
-        return <div>
-            <div className={classes.pagination}>
-                {pages.map(p => <span className={this.props.currentPage === p && classes.selectedPage}
-                                      onClick={(e) => {
-                                          this.onPageChanged(p)
-                                      }}>{p}</span>)}
-            </div>
-            {this.props.users.map(u => <div key={u.id}>
-            <span>
-                <div className={classes.usersImg}>
-                    <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""/>
-                </div>
-                <div>
-                    {u.followed
-                        ? <button onClick={() => {
-                            this.props.unfollow(u.id)
-                        }}>Unfollow</button>
-                        : <button onClick={() => {
-                            this.props.follow(u.id)
-                        }}>Follow</button>}
-                </div>
-            </span>
-                <span>
-                <span>
-                    <div>{u.name}</div>
-                    <div>{u.status}</div>
-                    <div>{u.id}</div>
-                </span>
-                <span>
-                </span>
-            </span>
-            </div>)}
-        </div>
+        />
     }
 }
 
@@ -93,6 +106,6 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-const Users = connect(mapStateToProps, mapDispatchToProps)(UsersFunction);
+const Users = connect(mapStateToProps, mapDispatchToProps)(UsersAPI);
 
 export default Users;
