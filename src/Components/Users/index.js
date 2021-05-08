@@ -1,22 +1,40 @@
 import React from 'react';
 import classes from './style.module.css';
 import {connect} from "react-redux";
-import {followAC, setUsersAC, unfollowAC} from "../../Redux/users-reducer";
+import {followAC, setCurrentPageAC, setTotalUsersCountAC, setUsersAC, unfollowAC} from "../../Redux/users-reducer";
 import userPhoto from '../../assets/images/users.png';
 import axios from "axios";
 
 class UsersFunction extends React.Component {
 
-    constructor(props) {
-        super(props);
+    componentDidMount() {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
+            this.props.setUsers(response.data.items);
+            this.props.setTotalUsersCount(response.data.totalCount)
+        })
+    }
 
-        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+    onPageChanged = (page) => {
+        this.props.setCurrentPage(page)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageSize}`).then(response => {
             this.props.setUsers(response.data.items);
         })
     }
 
     render() {
+        let pageCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+        let pages = [];
+        for (let i = 1; i <= pageCount; i++) {
+            pages.push(i)
+        }
+
         return <div>
+            <div className={classes.pagination}>
+                {pages.map(p => <span className={this.props.currentPage === p && classes.selectedPage}
+                                      onClick={(e) => {
+                                          this.onPageChanged(p)
+                                      }}>{p}</span>)}
+            </div>
             {this.props.users.map(u => <div key={u.id}>
             <span>
                 <div className={classes.usersImg}>
@@ -48,7 +66,10 @@ class UsersFunction extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        users: state.usersPage.users
+        users: state.usersPage.users,
+        pageSize: state.usersPage.pageSize,
+        totalUsersCount: state.usersPage.totalUsersCount,
+        currentPage: state.usersPage.currentPage
     }
 }
 
@@ -62,6 +83,12 @@ let mapDispatchToProps = (dispatch) => {
         },
         setUsers: (users) => {
             dispatch(setUsersAC(users))
+        },
+        setCurrentPage: (page) => {
+            dispatch(setCurrentPageAC(page))
+        },
+        setTotalUsersCount: (totalCount) => {
+            dispatch(setTotalUsersCountAC(totalCount))
         }
     }
 }

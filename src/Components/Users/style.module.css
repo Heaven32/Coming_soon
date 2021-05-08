@@ -1,3 +1,14 @@
 .usersImg img {
     width: 70px;
 }
+.selectedPage {
+    font-weight: bold;
+    color: black;
+}
+.pagination span {
+    margin: 5px;
+    font-size: 20px;
+}
+.selectedPage:hover, .pagination span:hover {
+    cursor: pointer;
+}
