@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ae7f4b1-1451-4c95-9851-5361612555b0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/Preloader/style.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/users-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +56,7 @@
       <workItem from="1618855055385" duration="4331000" />
       <workItem from="1619360403564" duration="19131000" />
       <workItem from="1620146696262" duration="16216000" />
-      <workItem from="1620495863020" duration="1390000" />
+      <workItem from="1620495863020" duration="4713000" />
     </task>
     <servers />
   </component>
