@@ -27,6 +27,9 @@ const NavigationLink = () => {
                 <li className={classes.link}>
                     <NavLink to="/users" activeClassName={classes.active}>Users</NavLink>
                 </li>
+                <li className={classes.link}>
+                    <NavLink to="/count-page" activeClassName={classes.active}>Count-Page</NavLink>
+                </li>
             </ul>
         </nav>
     )

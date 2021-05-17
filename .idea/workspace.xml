@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ae7f4b1-1451-4c95-9851-5361612555b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Preloader/style.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Count-Page/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Count-Page/style.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/App/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Navbar/NavigationLink/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Navbar/NavigationLink/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Users/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Redux/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/users-reducer.js" afterDir="false" />
     </list>
@@ -56,7 +62,8 @@
       <workItem from="1618855055385" duration="4331000" />
       <workItem from="1619360403564" duration="19131000" />
       <workItem from="1620146696262" duration="16216000" />
-      <workItem from="1620495863020" duration="4713000" />
+      <workItem from="1620495863020" duration="8726000" />
+      <workItem from="1621171731461" duration="8943000" />
     </task>
     <servers />
   </component>
@@ -100,5 +107,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="135" key="GridCell.Tab.0.right/0.0.1366.728/0.-1080.1920.1040@0.0.1366.728" timestamp="1617170669534" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1621173222421">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728/0.-1080.1920.1040@0.0.1366.728" timestamp="1621173222421" />
   </component>
 </project>
