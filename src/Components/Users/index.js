@@ -12,6 +12,7 @@ import {
 import userPhoto from '../../assets/images/users.png';
 import axios from "axios";
 import Preloader from "../Preloader";
+import {NavLink} from "react-router-dom";
 
 const UsersComponent = (props) => {
 
@@ -31,7 +32,9 @@ const UsersComponent = (props) => {
         {props.users.map(u => <div key={u.id}>
             <span>
                 <div className={classes.usersImg}>
-                    <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""/>
+                    <NavLink to={'/profile/' + u.id}>
+                        <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""/>
+                    </NavLink>
                 </div>
                 <div>
                     {u.followed
