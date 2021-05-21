@@ -266,11 +266,7 @@ const filmsReducer = (state = initialState, action) => {
         case UPDATE_NEW_MESSAGE_TEXT: {
             return {
                 ...state,
-                newValueText: state.filmsData.map((el, id) => {
-                    if (el.name == action.newText) {
-                        return el.height
-                    }
-                })
+                newValueText: state.filmsData.find(el => el.name === action.newText).height
             }
         }
         default:
